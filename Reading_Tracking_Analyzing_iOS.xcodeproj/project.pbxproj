@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		ED336283241200190037331E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED336282241200190037331E /* AppDelegate.swift */; };
 		ED336285241200190037331E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED336284241200190037331E /* SceneDelegate.swift */; };
-		ED336287241200190037331E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED336286241200190037331E /* ViewController.swift */; };
+		ED336287241200190037331E /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED336286241200190037331E /* StartViewController.swift */; };
 		ED33628A241200190037331E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED336288241200190037331E /* Main.storyboard */; };
 		ED33628C2412001F0037331E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED33628B2412001F0037331E /* Assets.xcassets */; };
 		ED33628F2412001F0037331E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED33628D2412001F0037331E /* LaunchScreen.storyboard */; };
+		EDC3433224161796001307A2 /* PrelabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3433124161796001307A2 /* PrelabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ED33627F241200190037331E /* Reading_Tracking_Analyzing_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reading_Tracking_Analyzing_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED336282241200190037331E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED336284241200190037331E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ED336286241200190037331E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED336286241200190037331E /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		ED336289241200190037331E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED33628B2412001F0037331E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED33628E2412001F0037331E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED3362902412001F0037331E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDC3433124161796001307A2 /* PrelabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrelabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				ED336282241200190037331E /* AppDelegate.swift */,
 				ED336284241200190037331E /* SceneDelegate.swift */,
-				ED336286241200190037331E /* ViewController.swift */,
+				ED336286241200190037331E /* StartViewController.swift */,
+				EDC3433124161796001307A2 /* PrelabViewController.swift */,
 				ED336288241200190037331E /* Main.storyboard */,
 				ED33628B2412001F0037331E /* Assets.xcassets */,
 				ED33628D2412001F0037331E /* LaunchScreen.storyboard */,
@@ -138,8 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED336287241200190037331E /* ViewController.swift in Sources */,
+				ED336287241200190037331E /* StartViewController.swift in Sources */,
 				ED336283241200190037331E /* AppDelegate.swift in Sources */,
+				EDC3433224161796001307A2 /* PrelabViewController.swift in Sources */,
 				ED336285241200190037331E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
