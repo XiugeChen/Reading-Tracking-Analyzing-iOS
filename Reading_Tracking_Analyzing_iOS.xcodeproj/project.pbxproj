@@ -14,6 +14,7 @@
 		ED33628C2412001F0037331E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED33628B2412001F0037331E /* Assets.xcassets */; };
 		ED33628F2412001F0037331E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED33628D2412001F0037331E /* LaunchScreen.storyboard */; };
 		EDC3433224161796001307A2 /* PrelabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3433124161796001307A2 /* PrelabViewController.swift */; };
+		EDF2A42724165E0F00FBD571 /* PrelabRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2A42624165E0F00FBD571 /* PrelabRunViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		ED33628E2412001F0037331E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED3362902412001F0037331E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDC3433124161796001307A2 /* PrelabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrelabViewController.swift; sourceTree = "<group>"; };
+		EDF2A42624165E0F00FBD571 /* PrelabRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrelabRunViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				ED336284241200190037331E /* SceneDelegate.swift */,
 				ED336286241200190037331E /* StartViewController.swift */,
 				EDC3433124161796001307A2 /* PrelabViewController.swift */,
+				EDF2A42624165E0F00FBD571 /* PrelabRunViewController.swift */,
 				ED336288241200190037331E /* Main.storyboard */,
 				ED33628B2412001F0037331E /* Assets.xcassets */,
 				ED33628D2412001F0037331E /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				ED336283241200190037331E /* AppDelegate.swift in Sources */,
 				EDC3433224161796001307A2 /* PrelabViewController.swift in Sources */,
 				ED336285241200190037331E /* SceneDelegate.swift in Sources */,
+				EDF2A42724165E0F00FBD571 /* PrelabRunViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
