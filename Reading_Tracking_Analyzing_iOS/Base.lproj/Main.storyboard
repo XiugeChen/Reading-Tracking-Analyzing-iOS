@@ -327,13 +327,23 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4oY-qC-9V4" userLabel="Scene View">
                                 <rect key="frame" x="0.0" y="44" width="414" height="684"/>
                             </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxL-5o-yaL">
+                                <rect key="frame" x="325" y="791" width="69" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="KIu-bc-EyW" kind="show" id="PAM-Fr-5r3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DNz-iA-Vtr" firstAttribute="bottom" secondItem="KeK-Fl-3gj" secondAttribute="bottom" constant="24" id="9hj-eh-ZRR"/>
                             <constraint firstItem="a8z-eR-fIK" firstAttribute="top" secondItem="4oY-qC-9V4" secondAttribute="bottom" constant="8" symbolic="YES" id="HXW-PC-ZWY"/>
                             <constraint firstAttribute="trailing" secondItem="a8z-eR-fIK" secondAttribute="trailing" id="IK2-I0-W8R"/>
+                            <constraint firstItem="DNz-iA-Vtr" firstAttribute="trailing" secondItem="TxL-5o-yaL" secondAttribute="trailing" constant="20" id="MUM-Ex-6jX"/>
                             <constraint firstItem="a8z-eR-fIK" firstAttribute="leading" secondItem="xa3-UX-Lx1" secondAttribute="leading" id="cSf-ow-D7P"/>
+                            <constraint firstItem="DNz-iA-Vtr" firstAttribute="bottom" secondItem="TxL-5o-yaL" secondAttribute="bottom" constant="20" id="kOT-ze-gWy"/>
                             <constraint firstItem="OxA-wv-8fT" firstAttribute="centerX" secondItem="xa3-UX-Lx1" secondAttribute="centerX" id="l2P-u9-P4l"/>
                             <constraint firstItem="DNz-iA-Vtr" firstAttribute="trailing" secondItem="4oY-qC-9V4" secondAttribute="trailing" id="nGh-LR-zCl"/>
                             <constraint firstItem="OxA-wv-8fT" firstAttribute="centerY" secondItem="xa3-UX-Lx1" secondAttribute="centerY" id="oOK-al-IV6"/>
@@ -345,6 +355,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DNz-iA-Vtr"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wLD-x2-u8V"/>
                     <connections>
                         <outlet property="blurBarView" destination="a8z-eR-fIK" id="5C3-0e-Ev2"/>
                         <outlet property="distanceLabel" destination="5sT-2e-3ED" id="alL-6l-suh"/>
@@ -361,6 +372,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="d2L-Hi-85K"/>
+        <segue reference="PAM-Fr-5r3"/>
     </inferredMetricsTieBreakers>
 </document>
