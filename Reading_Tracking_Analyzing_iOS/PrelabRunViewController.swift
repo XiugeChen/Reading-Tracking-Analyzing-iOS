@@ -29,6 +29,12 @@ class PrelabRunViewController: UIViewController {
         mScreenWidth = Int(mScreenSize.maxX) - 2 * OFFSET
         mScreenHeight = Int(mScreenSize.maxY) - 2 * OFFSET
         
+        print(mScreenSize.width)
+        print(mScreenSize.height)
+        
+        print(mScreenSize.maxX)
+        print(mScreenSize.maxY)
+        
         mTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(timerTicked), userInfo: nil, repeats: true)
     }
     
