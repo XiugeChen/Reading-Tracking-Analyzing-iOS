@@ -18,7 +18,7 @@ class PrelabRunViewController: UIViewController {
     var mScreenWidth: Int = 0
     var mScreenHeight: Int = 0
     var mNumDots: Int = 0
-    var mCurrentCircle: CircleView?
+    var mCurrentCircle: RedCircleView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,7 @@ class PrelabRunViewController: UIViewController {
             
             mCurrentCircle?.removeFromSuperview()
             
-            let circleView = CircleView(frame: CGRect(x: x, y: y, width: 25, height: 25))
+            let circleView = RedCircleView(frame: CGRect(x: x, y: y, width: 25, height: 25))
             view.addSubview(circleView)
             
             mCurrentCircle = circleView

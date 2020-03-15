@@ -13,7 +13,7 @@
 		ED33628A241200190037331E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED336288241200190037331E /* Main.storyboard */; };
 		ED33628C2412001F0037331E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED33628B2412001F0037331E /* Assets.xcassets */; };
 		ED33628F2412001F0037331E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED33628D2412001F0037331E /* LaunchScreen.storyboard */; };
-		ED7B02B8241C6839001CF1D8 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7B02B7241C6839001CF1D8 /* CircleView.swift */; };
+		ED7B02B8241C6839001CF1D8 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7B02B7241C6839001CF1D8 /* ShapeView.swift */; };
 		ED7B02BA241CA383001CF1D8 /* PrelabTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7B02B9241CA383001CF1D8 /* PrelabTestViewController.swift */; };
 		ED7B02BC241CA3EE001CF1D8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7B02BB241CA3ED001CF1D8 /* Extensions.swift */; };
 		EDC3433224161796001307A2 /* PrelabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3433124161796001307A2 /* PrelabViewController.swift */; };
@@ -29,7 +29,7 @@
 		ED33628B2412001F0037331E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED33628E2412001F0037331E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED3362902412001F0037331E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED7B02B7241C6839001CF1D8 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		ED7B02B7241C6839001CF1D8 /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		ED7B02B9241CA383001CF1D8 /* PrelabTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrelabTestViewController.swift; sourceTree = "<group>"; };
 		ED7B02BB241CA3ED001CF1D8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EDC3433124161796001307A2 /* PrelabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrelabViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 				ED7B02B9241CA383001CF1D8 /* PrelabTestViewController.swift */,
 				ED7B02BB241CA3ED001CF1D8 /* Extensions.swift */,
 				EDF2A42624165E0F00FBD571 /* PrelabRunViewController.swift */,
-				ED7B02B7241C6839001CF1D8 /* CircleView.swift */,
+				ED7B02B7241C6839001CF1D8 /* ShapeView.swift */,
 				ED336288241200190037331E /* Main.storyboard */,
 				ED33628B2412001F0037331E /* Assets.xcassets */,
 				ED33628D2412001F0037331E /* LaunchScreen.storyboard */,
@@ -153,7 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED7B02B8241C6839001CF1D8 /* CircleView.swift in Sources */,
+				ED7B02B8241C6839001CF1D8 /* ShapeView.swift in Sources */,
 				ED336287241200190037331E /* StartViewController.swift in Sources */,
 				ED7B02BA241CA383001CF1D8 /* PrelabTestViewController.swift in Sources */,
 				ED7B02BC241CA3EE001CF1D8 /* Extensions.swift in Sources */,

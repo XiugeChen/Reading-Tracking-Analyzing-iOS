@@ -1,10 +1,12 @@
 //
 //  ViewController.swift
-//  Eyes Tracking
+//  Copied and modified from https://github.com/virakri/eye-tracking-ios-prototype/blob/master/Eyes%20Tracking/ViewController.swift
 //
-//  Created by Virakri Jinangkul on 6/6/18.
+//  Originally created by Virakri Jinangkul on 6/6/18.
+//  Modified by Xiuge Chen on 3/9/20.
+//
 //  Copyright © 2018 virakri. All rights reserved.
-//
+//  Copyright © 2020 Xiuge Chen. All rights reserved.
 
 import UIKit
 import SceneKit
@@ -52,10 +54,10 @@ class PrelabTestViewController: UIViewController, ARSCNViewDelegate, ARSessionDe
     var lookAtTargetEyeLNode: SCNNode = SCNNode()
     var lookAtTargetEyeRNode: SCNNode = SCNNode()
     
-    // actual physical size of iPhoneX screen
-    var phoneScreenSize = CGSize(width: 0.0623908297, height: 0.135096943231532)
+    // actual physical size of iPhone 11 screen
+    var phoneScreenSize = CGSize(width: 0.0757, height: 0.1509)
     
-    // actual point size of iPhoneX screen
+    // actual point size of screen
     var phoneScreenPointSize: CGSize? = nil
     
     var virtualPhoneNode: SCNNode = SCNNode()
@@ -80,13 +82,18 @@ class PrelabTestViewController: UIViewController, ARSCNViewDelegate, ARSessionDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // bring the indicator to front
-        self.view.bringSubviewToFront(eyePositionIndicatorView)
-        self.view.bringSubviewToFront(eyePositionIndicatorCenterView)
-        
         // Get screen size
         let screenSize = UIScreen.main.bounds
         phoneScreenPointSize = CGSize(width: screenSize.width, height: screenSize.height)
+        
+        // Create a rectangle to indicate face region.
+        let recView = BlueRecView(frame: CGRect(x: screenSize.width / 2 - 150, y: screenSize.height / 2 - 225, width: 300, height: 450))
+        view.addSubview(recView)
+        
+        // bring the indicator to front
+        self.view.bringSubviewToFront(recView)
+        self.view.bringSubviewToFront(eyePositionIndicatorView)
+        self.view.bringSubviewToFront(eyePositionIndicatorCenterView)
         
         // Setup Design Elements
         eyePositionIndicatorView.layer.cornerRadius = eyePositionIndicatorView.bounds.width / 2
@@ -142,6 +149,16 @@ class PrelabTestViewController: UIViewController, ARSCNViewDelegate, ARSessionDe
         update(withFaceAnchor: faceAnchor)
     }
     
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        virtualPhoneNode.transform = (sceneView.pointOfView?.transform)!
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        faceNode.transform = node.transform
+        guard let faceAnchor = anchor as? ARFaceAnchor else { return }
+        update(withFaceAnchor: faceAnchor)
+    }
+    
     func update(withFaceAnchor anchor: ARFaceAnchor) {
         
         eyeRNode.simdTransform = anchor.rightEyeTransform
@@ -150,7 +167,7 @@ class PrelabTestViewController: UIViewController, ARSCNViewDelegate, ARSessionDe
         var eyeLLookAt = CGPoint()
         var eyeRLookAt = CGPoint()
         
-        let heightCompensation: CGFloat = 150
+        let heightCompensation: CGFloat = 312
         
         DispatchQueue.main.async {
 
@@ -162,9 +179,9 @@ class PrelabTestViewController: UIViewController, ARSCNViewDelegate, ARSessionDe
             
             for result in phoneScreenEyeRHitTestResults {
                 
-                eyeRLookAt.x = CGFloat(result.localCoordinates.x) / (self.phoneScreenSize.width / 2) * self.phoneScreenPointSize!.width
+                eyeRLookAt.x = CGFloat(result.localCoordinates.x) / (self.phoneScreenSize.width / 2.0) * self.phoneScreenPointSize!.width
                 
-                eyeRLookAt.y = CGFloat(result.localCoordinates.y) / (self.phoneScreenSize.height / 2) * self.phoneScreenPointSize!.height + heightCompensation
+                eyeRLookAt.y = CGFloat(result.localCoordinates.y) / (self.phoneScreenSize.height / 2.0) * self.phoneScreenPointSize!.height + heightCompensation
             }
             
             for result in phoneScreenEyeLHitTestResults {
@@ -175,7 +192,7 @@ class PrelabTestViewController: UIViewController, ARSCNViewDelegate, ARSessionDe
             }
             
             // Add the latest position and keep up to 8 recent position to smooth with.
-            let smoothThresholdNumber: Int = 10
+            let smoothThresholdNumber: Int = 8
             self.eyeLookAtPositionXs.append((eyeRLookAt.x + eyeLLookAt.x) / 2)
             self.eyeLookAtPositionYs.append(-(eyeRLookAt.y + eyeLLookAt.y) / 2)
             self.eyeLookAtPositionXs = Array(self.eyeLookAtPositionXs.suffix(smoothThresholdNumber))
@@ -202,15 +219,5 @@ class PrelabTestViewController: UIViewController, ARSCNViewDelegate, ARSessionDe
             // Update distance label value
             self.distanceLabel.text = "\(Int(round(distance * 100))) cm"
         }
-    }
-    
-    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        virtualPhoneNode.transform = (sceneView.pointOfView?.transform)!
-    }
-    
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        faceNode.transform = node.transform
-        guard let faceAnchor = anchor as? ARFaceAnchor else { return }
-        update(withFaceAnchor: faceAnchor)
     }
 }

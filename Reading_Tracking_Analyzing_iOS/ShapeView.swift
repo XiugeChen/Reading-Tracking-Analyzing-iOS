@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CircleView: UIView {
+class RedCircleView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,5 +39,32 @@ class CircleView: UIView {
            // Draw
            context.strokePath()
        }
+    }
+}
+
+class BlueRecView: UIView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = UIColor.clear
+    }
+        
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+        let h = rect.height
+        let w = rect.width
+        let color:UIColor = UIColor.blue
+
+        let drect = CGRect(x: (w * 0.25), y: (h * 0.25), width: (w * 0.5), height: (h * 0.5))
+        let bpath:UIBezierPath = UIBezierPath(rect: drect)
+
+        color.set()
+        bpath.stroke()
     }
 }
