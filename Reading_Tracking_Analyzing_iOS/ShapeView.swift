@@ -8,7 +8,9 @@
 
 import UIKit
 
-class RedCircleView: UIView {
+class CircleView: UIView {
+    
+    var mColor: String?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,8 +30,17 @@ class RedCircleView: UIView {
            // Set the circle outerline-width
            context.setLineWidth(5.0);
            
-           // Set the circle outerline-colour
-           UIColor.red.set()
+            // Set the circle outerline-colour
+            switch(mColor) {
+            case "red":
+                UIColor.red.set()
+                break
+            case "blue":
+                UIColor.blue.set()
+                break
+            default:
+                UIColor.black.set()
+            }
            
            // Create Circle
            let center = CGPoint(x: frame.size.width/2, y: frame.size.height/2)
@@ -39,6 +50,10 @@ class RedCircleView: UIView {
            // Draw
            context.strokePath()
        }
+    }
+    
+    func setColor(color: String) {
+        mColor = color
     }
 }
 

@@ -55,7 +55,7 @@ class PrelabTestViewController: UIViewController, ARSCNViewDelegate, ARSessionDe
     var lookAtTargetEyeRNode: SCNNode = SCNNode()
     
     // actual physical size of iPhone 11 screen
-    var phoneScreenSize = CGSize(width: 0.0757, height: 0.1509)
+    var phoneScreenSize = CGSize(width: 0.076, height: 0.135)
     
     // actual point size of screen
     var phoneScreenPointSize: CGSize? = nil
@@ -199,8 +199,8 @@ class PrelabTestViewController: UIViewController, ARSCNViewDelegate, ARSessionDe
             self.eyeLookAtPositionYs = Array(self.eyeLookAtPositionYs.suffix(smoothThresholdNumber))
             
             // weird amplify
-            let smoothEyeLookAtPositionX = self.eyeLookAtPositionXs.average! * 4
-            let smoothEyeLookAtPositionY = self.eyeLookAtPositionYs.average! * 2
+            let smoothEyeLookAtPositionX = self.eyeLookAtPositionXs.average! * 3
+            let smoothEyeLookAtPositionY = self.eyeLookAtPositionYs.average! * 2.25
             
             // update indicator position
             self.eyePositionIndicatorView.transform = CGAffineTransform(translationX: smoothEyeLookAtPositionX, y: smoothEyeLookAtPositionY)

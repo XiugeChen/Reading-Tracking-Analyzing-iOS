@@ -176,12 +176,34 @@
                     <view key="view" contentMode="scaleToFill" id="IgS-XO-iBU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bd-o8-wqN">
+                                <rect key="frame" x="0.0" y="805" width="414" height="57"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="KIu-bc-EyW" kind="show" id="NWR-B0-80z"/>
+                                </connections>
+                            </button>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdI-le-5mI" userLabel="Scene View">
+                                <rect key="frame" x="0.0" y="87" width="414" height="684"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </arscnView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0bd-o8-wqN" firstAttribute="leading" secondItem="MrO-UQ-jOw" secondAttribute="leading" id="Bi2-t5-UOK"/>
+                            <constraint firstItem="MrO-UQ-jOw" firstAttribute="bottom" secondItem="0bd-o8-wqN" secondAttribute="bottom" id="UZb-Iy-dbb"/>
+                            <constraint firstItem="MrO-UQ-jOw" firstAttribute="trailing" secondItem="0bd-o8-wqN" secondAttribute="trailing" id="ufv-e3-2DE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="MrO-UQ-jOw"/>
                     </view>
                     <navigationItem key="navigationItem" id="SIS-a8-Xin"/>
                     <connections>
-                        <segue destination="KIu-bc-EyW" kind="show" identifier="PrelabRunToPrelab" id="AfV-MU-2Wk"/>
+                        <outlet property="cont_btn" destination="0bd-o8-wqN" id="pI6-sp-2uX"/>
+                        <outlet property="sceneView" destination="hdI-le-5mI" id="cSc-6E-oCW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IlC-TP-Swi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -372,6 +394,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="AfV-MU-2Wk"/>
+        <segue reference="NWR-B0-80z"/>
     </inferredMetricsTieBreakers>
 </document>
