@@ -198,8 +198,9 @@ class PrelabTestViewController: UIViewController, ARSCNViewDelegate, ARSessionDe
             self.eyeLookAtPositionXs = Array(self.eyeLookAtPositionXs.suffix(smoothThresholdNumber))
             self.eyeLookAtPositionYs = Array(self.eyeLookAtPositionYs.suffix(smoothThresholdNumber))
             
-            let smoothEyeLookAtPositionX = self.eyeLookAtPositionXs.average!
-            let smoothEyeLookAtPositionY = self.eyeLookAtPositionYs.average!
+            // weird amplify
+            let smoothEyeLookAtPositionX = self.eyeLookAtPositionXs.average! * 4
+            let smoothEyeLookAtPositionY = self.eyeLookAtPositionYs.average! * 2
             
             // update indicator position
             self.eyePositionIndicatorView.transform = CGAffineTransform(translationX: smoothEyeLookAtPositionX, y: smoothEyeLookAtPositionY)
