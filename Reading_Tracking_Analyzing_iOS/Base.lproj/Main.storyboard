@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -60,6 +60,9 @@
                                         <state key="normal" title="Start Reading">
                                             <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="Fml-wl-0sv" kind="show" id="wt4-up-P0U"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -101,6 +104,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
+        </scene>
+        <!--File List View Controller-->
+        <scene sceneID="MOA-9d-YJf">
+            <objects>
+                <viewController storyboardIdentifier="FileListViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fml-wl-0sv" customClass="FileListViewController" customModule="Reading_Tracking_Analyzing_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zPp-DQ-1fP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upy-it-ypf">
+                                <rect key="frame" x="305" y="791" width="69" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="tIe-fK-2z2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDe-ah-iqO">
+                                <rect key="frame" x="40" y="791" width="71" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Read">
+                                    <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="mod-c1-7hr" kind="show" id="vvc-cD-yXL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HLQ-ml-3QB" firstAttribute="bottom" secondItem="yDe-ah-iqO" secondAttribute="bottom" constant="20" id="0ng-t4-6wd"/>
+                            <constraint firstItem="HLQ-ml-3QB" firstAttribute="trailing" secondItem="Upy-it-ypf" secondAttribute="trailing" constant="40" id="BzW-bn-y5I"/>
+                            <constraint firstItem="HLQ-ml-3QB" firstAttribute="bottom" secondItem="Upy-it-ypf" secondAttribute="bottom" constant="20" id="CKc-U7-cMd"/>
+                            <constraint firstItem="yDe-ah-iqO" firstAttribute="leading" secondItem="HLQ-ml-3QB" secondAttribute="leading" constant="40" id="MHN-VI-hK3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HLQ-ml-3QB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RWM-yX-SoI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p27-Fa-gfn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1251" y="757"/>
         </scene>
         <!--Prelab Page-->
         <scene sceneID="82S-Wu-XxA">
@@ -187,14 +234,17 @@
                                     <segue destination="KIu-bc-EyW" kind="show" id="NWR-B0-80z"/>
                                 </connections>
                             </button>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdI-le-5mI" userLabel="Scene View">
-                                <rect key="frame" x="0.0" y="87" width="414" height="684"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdI-le-5mI" userLabel="Scene View">
+                                <rect key="frame" x="0.0" y="84" width="414" height="691"/>
                             </arscnView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="0bd-o8-wqN" firstAttribute="top" secondItem="hdI-le-5mI" secondAttribute="bottom" constant="30" id="6zp-jZ-Ln2"/>
+                            <constraint firstItem="hdI-le-5mI" firstAttribute="trailing" secondItem="MrO-UQ-jOw" secondAttribute="trailing" id="Aw4-1I-iGA"/>
                             <constraint firstItem="0bd-o8-wqN" firstAttribute="leading" secondItem="MrO-UQ-jOw" secondAttribute="leading" id="Bi2-t5-UOK"/>
+                            <constraint firstItem="hdI-le-5mI" firstAttribute="leading" secondItem="MrO-UQ-jOw" secondAttribute="leading" id="FB2-3g-vZ2"/>
+                            <constraint firstItem="hdI-le-5mI" firstAttribute="top" secondItem="MrO-UQ-jOw" secondAttribute="top" constant="40" id="QDR-2v-v5t"/>
                             <constraint firstItem="MrO-UQ-jOw" firstAttribute="bottom" secondItem="0bd-o8-wqN" secondAttribute="bottom" id="UZb-Iy-dbb"/>
                             <constraint firstItem="MrO-UQ-jOw" firstAttribute="trailing" secondItem="0bd-o8-wqN" secondAttribute="trailing" id="ufv-e3-2DE"/>
                         </constraints>
@@ -392,8 +442,66 @@
             </objects>
             <point key="canvasLocation" x="2632" y="27"/>
         </scene>
+        <!--File View Controller-->
+        <scene sceneID="paN-G7-JGI">
+            <objects>
+                <viewController storyboardIdentifier="FileViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mod-c1-7hr" customClass="FileViewController" customModule="Reading_Tracking_Analyzing_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JpN-4w-dlb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DY8-8O-o3I">
+                                <rect key="frame" x="40" y="782" width="334" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Fml-wl-0sv" kind="show" id="TdX-xu-JLT"/>
+                                </connections>
+                            </button>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SES-ep-5S0" userLabel="Scene View">
+                                <rect key="frame" x="0.0" y="84" width="414" height="688"/>
+                            </arscnView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARF-AB-Xuh">
+                                <rect key="frame" x="0.0" y="84" width="414" height="688"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="w5c-pf-c6E" firstAttribute="bottom" secondItem="DY8-8O-o3I" secondAttribute="bottom" constant="20" id="0aW-Mn-gZJ"/>
+                            <constraint firstItem="ARF-AB-Xuh" firstAttribute="top" secondItem="w5c-pf-c6E" secondAttribute="top" constant="40" id="Ccn-In-p1H"/>
+                            <constraint firstItem="w5c-pf-c6E" firstAttribute="trailing" secondItem="ARF-AB-Xuh" secondAttribute="trailing" id="IDQ-bO-1dD"/>
+                            <constraint firstItem="ARF-AB-Xuh" firstAttribute="leading" secondItem="w5c-pf-c6E" secondAttribute="leading" id="NI8-DP-hH2"/>
+                            <constraint firstItem="SES-ep-5S0" firstAttribute="trailing" secondItem="w5c-pf-c6E" secondAttribute="trailing" id="RnB-Kk-Ost"/>
+                            <constraint firstItem="SES-ep-5S0" firstAttribute="top" secondItem="w5c-pf-c6E" secondAttribute="top" constant="40" id="ZJD-iA-WAQ"/>
+                            <constraint firstItem="DY8-8O-o3I" firstAttribute="top" secondItem="SES-ep-5S0" secondAttribute="bottom" constant="10" id="cMY-1O-ZvG"/>
+                            <constraint firstItem="w5c-pf-c6E" firstAttribute="trailing" secondItem="DY8-8O-o3I" secondAttribute="trailing" constant="40" id="e3I-pp-Tfl"/>
+                            <constraint firstItem="DY8-8O-o3I" firstAttribute="leading" secondItem="w5c-pf-c6E" secondAttribute="leading" constant="40" id="edh-Cy-RkZ"/>
+                            <constraint firstItem="SES-ep-5S0" firstAttribute="leading" secondItem="w5c-pf-c6E" secondAttribute="leading" id="lsf-8Q-8Fe"/>
+                            <constraint firstItem="DY8-8O-o3I" firstAttribute="top" secondItem="ARF-AB-Xuh" secondAttribute="bottom" constant="10" id="uhM-Ub-0GE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="w5c-pf-c6E"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xB2-Jj-9au"/>
+                    <connections>
+                        <outlet property="sceneView" destination="SES-ep-5S0" id="rm8-lk-Ryw"/>
+                        <outlet property="webView" destination="ARF-AB-Xuh" id="6Xv-Ce-j2c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Dy-fO-EV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2656.521739130435" y="756.69642857142856"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NWR-B0-80z"/>
+        <segue reference="d2L-Hi-85K"/>
+        <segue reference="TdX-xu-JLT"/>
+        <segue reference="tIe-fK-2z2"/>
     </inferredMetricsTieBreakers>
 </document>
