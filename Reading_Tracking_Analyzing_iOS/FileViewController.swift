@@ -11,7 +11,7 @@ import SceneKit
 import ARKit
 import WebKit
 
-class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
+class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UIScrollViewDelegate {
     
     @IBOutlet var sceneView: ARSCNView!
     
@@ -20,7 +20,17 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        webView.scrollView.delegate = self
+        
         let url: URL! = URL(string: "https://arxiv.org/pdf/1505.01731.pdf")
         webView.load(URLRequest(url: url))
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print("Scroll: %f, %f", scrollView.contentOffset.x, scrollView.contentOffset.y)
+    }
+    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        print("Zoom: %f", scrollView.zoomScale)
     }
 }
