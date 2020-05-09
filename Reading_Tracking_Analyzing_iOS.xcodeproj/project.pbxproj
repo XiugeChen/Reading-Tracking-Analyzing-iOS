@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED336283241200190037331E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED336282241200190037331E /* AppDelegate.swift */; };
 		ED336285241200190037331E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED336284241200190037331E /* SceneDelegate.swift */; };
-		ED336287241200190037331E /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED336286241200190037331E /* StartViewController.swift */; };
+		ED336287241200190037331E /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED336286241200190037331E /* EmptyViewController.swift */; };
 		ED33628A241200190037331E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED336288241200190037331E /* Main.storyboard */; };
 		ED33628C2412001F0037331E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED33628B2412001F0037331E /* Assets.xcassets */; };
 		ED33628F2412001F0037331E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED33628D2412001F0037331E /* LaunchScreen.storyboard */; };
@@ -21,9 +21,7 @@
 		EDAC6EF4246531B600AF2BED /* GlobalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAC6EF3246531B600AF2BED /* GlobalSettings.swift */; };
 		EDAC6EF624662CEC00AF2BED /* QuestionPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAC6EF524662CEC00AF2BED /* QuestionPreviewViewController.swift */; };
 		EDAC6EF82466333300AF2BED /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAC6EF72466333300AF2BED /* QuestionViewController.swift */; };
-		EDAC6EFA24663B2A00AF2BED /* ThankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAC6EF924663B2A00AF2BED /* ThankViewController.swift */; };
 		EDAC6EFD2466A02700AF2BED /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDAC6EFC2466A02700AF2BED /* WebKit.framework */; };
-		EDC3433224161796001307A2 /* PrelabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3433124161796001307A2 /* PrelabViewController.swift */; };
 		EDF2A42724165E0F00FBD571 /* PrelabRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2A42624165E0F00FBD571 /* PrelabRunViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +29,7 @@
 		ED33627F241200190037331E /* Reading_Tracking_Analyzing_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reading_Tracking_Analyzing_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED336282241200190037331E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED336284241200190037331E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ED336286241200190037331E /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		ED336286241200190037331E /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		ED336289241200190037331E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED33628B2412001F0037331E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED33628E2412001F0037331E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,9 +42,7 @@
 		EDAC6EF3246531B600AF2BED /* GlobalSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSettings.swift; sourceTree = "<group>"; };
 		EDAC6EF524662CEC00AF2BED /* QuestionPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPreviewViewController.swift; sourceTree = "<group>"; };
 		EDAC6EF72466333300AF2BED /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
-		EDAC6EF924663B2A00AF2BED /* ThankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankViewController.swift; sourceTree = "<group>"; };
 		EDAC6EFC2466A02700AF2BED /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		EDC3433124161796001307A2 /* PrelabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrelabViewController.swift; sourceTree = "<group>"; };
 		EDF2A42624165E0F00FBD571 /* PrelabRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrelabRunViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,8 +81,7 @@
 				EDAC6EF3246531B600AF2BED /* GlobalSettings.swift */,
 				ED336282241200190037331E /* AppDelegate.swift */,
 				ED336284241200190037331E /* SceneDelegate.swift */,
-				ED336286241200190037331E /* StartViewController.swift */,
-				EDC3433124161796001307A2 /* PrelabViewController.swift */,
+				ED336286241200190037331E /* EmptyViewController.swift */,
 				ED7B02B9241CA383001CF1D8 /* PrelabTestViewController.swift */,
 				ED7B02BB241CA3ED001CF1D8 /* Extensions.swift */,
 				EDF2A42624165E0F00FBD571 /* PrelabRunViewController.swift */,
@@ -95,7 +90,6 @@
 				EDAC6EF524662CEC00AF2BED /* QuestionPreviewViewController.swift */,
 				EDAC6EF1246512E200AF2BED /* FileViewController.swift */,
 				EDAC6EF72466333300AF2BED /* QuestionViewController.swift */,
-				EDAC6EF924663B2A00AF2BED /* ThankViewController.swift */,
 				ED336288241200190037331E /* Main.storyboard */,
 				ED33628B2412001F0037331E /* Assets.xcassets */,
 				ED33628D2412001F0037331E /* LaunchScreen.storyboard */,
@@ -184,15 +178,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED7B02B8241C6839001CF1D8 /* ShapeView.swift in Sources */,
-				ED336287241200190037331E /* StartViewController.swift in Sources */,
+				ED336287241200190037331E /* EmptyViewController.swift in Sources */,
 				ED7B02BA241CA383001CF1D8 /* PrelabTestViewController.swift in Sources */,
 				ED7B02BC241CA3EE001CF1D8 /* Extensions.swift in Sources */,
 				ED336283241200190037331E /* AppDelegate.swift in Sources */,
 				EDAC6EF02465129C00AF2BED /* FileListViewController.swift in Sources */,
 				EDAC6EF82466333300AF2BED /* QuestionViewController.swift in Sources */,
-				EDAC6EFA24663B2A00AF2BED /* ThankViewController.swift in Sources */,
 				EDAC6EF2246512E200AF2BED /* FileViewController.swift in Sources */,
-				EDC3433224161796001307A2 /* PrelabViewController.swift in Sources */,
 				ED336285241200190037331E /* SceneDelegate.swift in Sources */,
 				EDAC6EF4246531B600AF2BED /* GlobalSettings.swift in Sources */,
 				EDF2A42724165E0F00FBD571 /* PrelabRunViewController.swift in Sources */,
