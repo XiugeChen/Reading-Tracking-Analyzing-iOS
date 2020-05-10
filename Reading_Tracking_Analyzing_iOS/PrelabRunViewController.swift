@@ -12,6 +12,8 @@ import ARKit
 
 class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
+    var fileURL: URL?
+    
     // display dots and collect gaze data
     @IBOutlet var cont_btn: UIButton!
     
@@ -117,6 +119,26 @@ class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDel
         // Set LookAtTargetEye at 2 meters away from the center of eyeballs to create segment vector
         lookAtTargetEyeLNode.position.z = 2
         lookAtTargetEyeRNode.position.z = 2
+        
+        // data file to write
+        let currentTime = CACurrentMediaTime();
+        let file = String(format: "%f.txt", currentTime)
+
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+
+            self.fileURL = dir.appendingPathComponent(file)
+            
+            print("Init file url to be:", self.fileURL!)
+            
+            let text = "#Data-Calibration\n#Format:\n#Data,time,actualX,actualY,x,y\n"
+            
+            do {
+                try text.write(to: fileURL!, atomically: true, encoding: .utf8)
+            }
+            catch {
+                print("[Error]: Write to file failed, file:", self.fileURL!)
+            }
+        }
     }
     
     @objc func timerTicked() {
@@ -171,6 +193,14 @@ class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDel
                 circleView.setColor(color: "blue")
                 view.addSubview(circleView)
                 
+                // write calibration to file
+                let text = String(format: "Data,%f,%d,%d,%d,%d\n", CACurrentMediaTime(), Int(Float(mScreenWidth) * X_POS[i]), Int(Float(mScreenHeight) * Y_POS[i]), sample.x, sample.y)
+                
+                if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
+                    fileUpdater.seekToEndOfFile()
+                    fileUpdater.write(text.data(using: .utf8)!)
+                    fileUpdater.closeFile()
+                }
             }
             
             if (samples.count != 0) {

@@ -114,7 +114,7 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
             
             print("Init file url to be:", self.fileURL!)
             
-            let text = "#Format:\n#Scroll,time,x,y\n#Zoom,time,percentage\n#GazePoint,time,x,y\n"
+            let text = "#Data-Collection\n#Format:\n#Scroll,time,x,y\n#Zoom,time,percentage\n#GazePoint,time,x,y\n"
             
             do {
                 try text.write(to: fileURL!, atomically: true, encoding: .utf8)
