@@ -184,6 +184,8 @@ class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDel
         var i = 0
         var result: Array<(x: Int, y: Int)> = [(0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
         
+        var text = ""
+        
         for samples in mSamples {
             for sample in samples {
                 result[i].x += abs(sample.x - Int(Float(mScreenWidth) * X_POS[i]))
@@ -194,13 +196,7 @@ class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDel
                 view.addSubview(circleView)
                 
                 // write calibration to file
-                let text = String(format: "Data,%f,%d,%d,%d,%d\n", CACurrentMediaTime(), Int(Float(mScreenWidth) * X_POS[i]), Int(Float(mScreenHeight) * Y_POS[i]), sample.x, sample.y)
-                
-                if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
-                    fileUpdater.seekToEndOfFile()
-                    fileUpdater.write(text.data(using: .utf8)!)
-                    fileUpdater.closeFile()
-                }
+                text.append(String(format: "Data,%f,%d,%d,%d,%d\n", CACurrentMediaTime(), Int(Float(mScreenWidth) * X_POS[i]), Int(Float(mScreenHeight) * Y_POS[i]), sample.x, sample.y))
             }
             
             if (samples.count != 0) {
@@ -208,6 +204,12 @@ class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDel
             }
             
             i += 1
+        }
+        
+        if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
+            fileUpdater.seekToEndOfFile()
+            fileUpdater.write(text.data(using: .utf8)!)
+            fileUpdater.closeFile()
         }
         
         cont_btn.isHidden = false
