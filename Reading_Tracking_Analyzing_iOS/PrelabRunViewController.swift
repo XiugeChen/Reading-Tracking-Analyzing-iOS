@@ -12,6 +12,7 @@ import ARKit
 
 class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
+    // display dots and collect gaze data
     @IBOutlet var cont_btn: UIButton!
     
     let X_POS: Array<Float> = [0.1, 0.9, 0.5, 0.1, 0.9]
@@ -26,6 +27,7 @@ class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDel
     var mNumDots: Int = 0
     var mCurrentCircle: CircleView?
     
+    // gaze tracking
     @IBOutlet var sceneView: ARSCNView!
     
     var faceNode: SCNNode = SCNNode()
