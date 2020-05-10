@@ -13,6 +13,8 @@ import WebKit
 
 class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UIScrollViewDelegate {
     
+    var fileURL: URL?
+    
     @IBOutlet var sceneView: ARSCNView!
     
     @IBOutlet var webView: WKWebView!
@@ -76,8 +78,6 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
         let screenSize = UIScreen.main.bounds
         phoneScreenPointSize = CGSize(width: screenSize.width, height: screenSize.height)
         
-        let mScreenSize = UIScreen.main.bounds
-        
         sceneView.layer.cornerRadius = 28
         // Set the view's delegate
         sceneView.delegate = self
@@ -103,14 +103,46 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
         
         let url: URL! = URL(string: "https://arxiv.org/pdf/1505.01731.pdf")
         webView.load(URLRequest(url: url))
+        
+        // data file to write
+        let currentTime = CACurrentMediaTime();
+        let file = String(format: "%f.txt", currentTime)
+
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+
+            self.fileURL = dir.appendingPathComponent(file)
+            
+            print("Init file url to be:", self.fileURL!)
+            
+            let text = "#Format:\n#Scroll,time,x,y\n#Zoom,time,percentage\n#GazePoint,time,x,y\n"
+            
+            do {
+                try text.write(to: fileURL!, atomically: true, encoding: .utf8)
+            }
+            catch {
+                print("[Error]: Write to file failed, file:", self.fileURL!)
+            }
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("Scroll: x=(", scrollView.contentOffset.x, "), y=(", scrollView.contentOffset.y, ")")
+        let text = String(format: "Scroll,%f,%f,%f\n", CACurrentMediaTime(), scrollView.contentOffset.x, scrollView.contentOffset.y)
+        
+        if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
+            fileUpdater.seekToEndOfFile()
+            fileUpdater.write(text.data(using: .utf8)!)
+            fileUpdater.closeFile()
+        }
     }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        print("Zoom:", scrollView.zoomScale)
+        let text = String(format: "Zoom,%f,%f\n", CACurrentMediaTime(), scrollView.zoomScale)
+        
+        if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
+            fileUpdater.seekToEndOfFile()
+            fileUpdater.write(text.data(using: .utf8)!)
+            fileUpdater.closeFile()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -196,7 +228,13 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
             let x = Int(round(smoothEyeLookAtPositionX + self.phoneScreenPointSize!.width / 2))
             let y = Int(round(smoothEyeLookAtPositionY + self.phoneScreenPointSize!.height / 2))
             
-            print("Gaze point: x=(", x, "), y=(", y, ")")
+            let text = String(format: "GazePoint,%f,%d,%d\n", CACurrentMediaTime(), x, y)
+            
+            if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
+                fileUpdater.seekToEndOfFile()
+                fileUpdater.write(text.data(using: .utf8)!)
+                fileUpdater.closeFile()
+            }
         }
     }
 }
