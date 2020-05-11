@@ -101,7 +101,7 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
         // set up web view
         webView.scrollView.delegate = self
         
-        let url: URL! = URL(string: "https://arxiv.org/pdf/1505.01731.pdf")
+        let url: URL! = URL(string: URLS[ARTICLE_ID])
         webView.load(URLRequest(url: url))
         
         // data file to write

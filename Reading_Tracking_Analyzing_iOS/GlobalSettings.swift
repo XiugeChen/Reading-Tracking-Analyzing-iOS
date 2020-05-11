@@ -23,7 +23,7 @@ enum ReadingMode {
     case shallow
 }
 
-let URLS = ["https://arxiv.org/pdf/1505.01731.pdf"]
+let URLS = ["https://www.facebook.com/"]
 
 let DISPLAY = [[DisplayMethod.social],
                [DisplayMethod.social],
