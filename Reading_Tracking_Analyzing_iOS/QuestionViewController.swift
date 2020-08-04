@@ -18,7 +18,7 @@ class QuestionViewController: UIViewController {
     @IBAction func finishClicked(_ sender: Any) {
         ARTICLE_ID += 1
         
-        if (ARTICLE_ID < URLS.count) {
+        if (ARTICLE_ID < URLS_SOCIAL.count) {
             switch (READING_MODE[TEST_ID][ARTICLE_ID]) {
                 case ReadingMode.deep:
                     performSegue(withIdentifier: "QuesToRead", sender: self)

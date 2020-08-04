@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -549,6 +549,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0u-OG-IZV">
+                                <rect key="frame" x="0.0" y="64" width="414" height="46"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Questions">
+                                        <attributes>
+                                            <font key="NSFont" size="40" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q: According to the passage, which of the following is correct about walls in China?" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9r-a8-THb">
+                                <rect key="frame" x="20" y="130" width="374" height="89.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="H3l-Rv-eNR">
+                                <rect key="frame" x="20" y="434" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="A. People usually built walls around villages and towns, but never inside them.">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BaQ-0m-g7i">
+                                <rect key="frame" x="20" y="550" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="B. Walls were an essential part of villages, towns, houses and even temples.">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gP7-qQ-IQj">
+                                <rect key="frame" x="20" y="666" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="C. Only critical villages and towns are walled.">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZQ-oG-81Z">
                                 <rect key="frame" x="0.0" y="782" width="414" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
@@ -559,21 +602,27 @@
                                     <action selector="finishClicked:" destination="Gkw-4E-h5X" eventType="touchUpInside" id="5mb-2n-Pgo"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0u-OG-IZV">
-                                <rect key="frame" x="0.0" y="64" width="414" height="46.666666666666657"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="H3l-Rv-eNR" firstAttribute="trailing" secondItem="JtE-bb-Mqo" secondAttribute="trailing" constant="-20" id="4wM-4z-hHJ"/>
+                            <constraint firstItem="RZQ-oG-81Z" firstAttribute="top" secondItem="gP7-qQ-IQj" secondAttribute="bottom" constant="80" id="8NQ-Ff-hm7"/>
+                            <constraint firstItem="gP7-qQ-IQj" firstAttribute="top" secondItem="BaQ-0m-g7i" secondAttribute="bottom" constant="80" id="CCZ-nE-ik6"/>
                             <constraint firstItem="RZQ-oG-81Z" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" id="ED1-D2-yps"/>
                             <constraint firstItem="JtE-bb-Mqo" firstAttribute="trailing" secondItem="RZQ-oG-81Z" secondAttribute="trailing" id="GCR-2c-Ugt"/>
+                            <constraint firstItem="H3l-Rv-eNR" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" constant="20" id="HCC-AE-xGi"/>
                             <constraint firstItem="JtE-bb-Mqo" firstAttribute="bottom" secondItem="RZQ-oG-81Z" secondAttribute="bottom" constant="20" id="PjT-wf-wjM"/>
                             <constraint firstItem="j0u-OG-IZV" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" id="QKB-sZ-dGx"/>
+                            <constraint firstItem="gP7-qQ-IQj" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" constant="20" id="QT3-BA-2dp"/>
+                            <constraint firstItem="BaQ-0m-g7i" firstAttribute="trailing" secondItem="JtE-bb-Mqo" secondAttribute="trailing" constant="-20" id="R4I-Xu-bi5"/>
                             <constraint firstItem="j0u-OG-IZV" firstAttribute="top" secondItem="JtE-bb-Mqo" secondAttribute="top" constant="20" id="Z0s-eI-hka"/>
+                            <constraint firstItem="C9r-a8-THb" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" constant="20" id="bVB-Oh-aoU"/>
                             <constraint firstItem="JtE-bb-Mqo" firstAttribute="trailing" secondItem="j0u-OG-IZV" secondAttribute="trailing" id="bwb-SW-Bcc"/>
+                            <constraint firstAttribute="trailing" secondItem="gP7-qQ-IQj" secondAttribute="trailing" constant="20" id="cDE-3n-JaR"/>
+                            <constraint firstItem="C9r-a8-THb" firstAttribute="top" secondItem="j0u-OG-IZV" secondAttribute="bottom" constant="20" id="fVp-2v-h89"/>
+                            <constraint firstItem="BaQ-0m-g7i" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" constant="20" id="kdj-kv-f1g"/>
+                            <constraint firstItem="BaQ-0m-g7i" firstAttribute="top" secondItem="H3l-Rv-eNR" secondAttribute="bottom" constant="80" id="lhr-la-t0e"/>
+                            <constraint firstItem="C9r-a8-THb" firstAttribute="trailing" secondItem="JtE-bb-Mqo" secondAttribute="trailing" constant="-20" id="nuC-OU-7ew"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JtE-bb-Mqo"/>
                     </view>
@@ -649,20 +698,46 @@
                                     <segue destination="mod-c1-7hr" kind="show" id="h3H-5e-vgy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questions Preview" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YE-XL-eyx">
-                                <rect key="frame" x="0.0" y="64" width="414" height="45.666666666666657"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YE-XL-eyx">
+                                <rect key="frame" x="0.0" y="64" width="414" height="45"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Questions Preview">
+                                        <attributes>
+                                            <font key="NSFont" size="40" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q: According to the passage, which of the following is correct about walls in China?" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZU-Xi-yqQ">
+                                <rect key="frame" x="20" y="189" width="374" height="89.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="eX6-aK-6P9">
+                                <rect key="frame" x="20" y="358.66666666666669" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="7YE-XL-eyx" firstAttribute="leading" secondItem="W8y-m4-t2e" secondAttribute="leading" id="7wq-dJ-h9Y"/>
+                            <constraint firstItem="W8y-m4-t2e" firstAttribute="trailing" secondItem="eX6-aK-6P9" secondAttribute="trailing" constant="20" id="HMp-aB-YFG"/>
                             <constraint firstItem="W8y-m4-t2e" firstAttribute="trailing" secondItem="7YE-XL-eyx" secondAttribute="trailing" id="NbW-OV-V1H"/>
                             <constraint firstItem="W8y-m4-t2e" firstAttribute="trailing" secondItem="3Xy-2B-Wd5" secondAttribute="trailing" id="SYw-oN-XHC"/>
+                            <constraint firstItem="W8y-m4-t2e" firstAttribute="trailing" secondItem="rZU-Xi-yqQ" secondAttribute="trailing" constant="20" id="UpD-cT-tdn"/>
                             <constraint firstItem="W8y-m4-t2e" firstAttribute="bottom" secondItem="3Xy-2B-Wd5" secondAttribute="bottom" constant="20" id="YPj-gS-kkA"/>
                             <constraint firstItem="7YE-XL-eyx" firstAttribute="top" secondItem="W8y-m4-t2e" secondAttribute="top" constant="20" id="aqq-n7-GVV"/>
+                            <constraint firstItem="eX6-aK-6P9" firstAttribute="leading" secondItem="6Sb-KK-rVH" secondAttribute="leading" constant="20" id="eNl-Cq-q8i"/>
+                            <constraint firstItem="eX6-aK-6P9" firstAttribute="top" secondItem="rZU-Xi-yqQ" secondAttribute="bottom" constant="80" id="nxI-bJ-r4q"/>
+                            <constraint firstItem="rZU-Xi-yqQ" firstAttribute="leading" secondItem="6Sb-KK-rVH" secondAttribute="leading" constant="20" id="rnP-4q-eLC"/>
+                            <constraint firstItem="rZU-Xi-yqQ" firstAttribute="top" secondItem="7YE-XL-eyx" secondAttribute="bottom" constant="80" id="tKb-Tn-J0q"/>
                             <constraint firstItem="3Xy-2B-Wd5" firstAttribute="leading" secondItem="W8y-m4-t2e" secondAttribute="leading" id="tUq-Yo-8d4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="W8y-m4-t2e"/>
@@ -677,7 +752,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="T83-Wc-Xkx"/>
         <segue reference="x2S-uD-Zlj"/>
-        <segue reference="h3H-5e-vgy"/>
+        <segue reference="R59-4M-1KD"/>
         <segue reference="PAM-Fr-5r3"/>
         <segue reference="gaL-UV-Wm9"/>
         <segue reference="0Ob-AR-reN"/>

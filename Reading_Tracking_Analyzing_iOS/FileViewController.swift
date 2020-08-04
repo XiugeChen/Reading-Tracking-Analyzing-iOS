@@ -101,8 +101,16 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
         // set up web view
         webView.scrollView.delegate = self
         
-        let url: URL! = URL(string: URLS[ARTICLE_ID])
-        webView.load(URLRequest(url: url))
+        switch (DISPLAY[TEST_ID][ARTICLE_ID]) {
+            case DisplayMethod.news:
+                let url: URL! = URL(string: URLS_NEWS[ARTICLE_ID])
+                webView.load(URLRequest(url: url))
+                break
+            case DisplayMethod.social:
+                let url: URL! = URL(string: URLS_SOCIAL[ARTICLE_ID])
+                webView.load(URLRequest(url: url))
+                break
+        }
         
         // data file to write
         let currentTime = CACurrentMediaTime();
