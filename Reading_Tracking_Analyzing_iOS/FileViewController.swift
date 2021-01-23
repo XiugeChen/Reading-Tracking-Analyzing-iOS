@@ -113,8 +113,8 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
         }
         
         // data file to write
-        let currentTime = CACurrentMediaTime();
-        let file = String(format: "%f.txt", currentTime)
+        let currentTime = Int64(Date().timeIntervalSince1970 * 1000);
+        let file = String(format: "%ld.txt", currentTime)
 
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
 
@@ -134,7 +134,7 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let text = String(format: "Scroll,%f,%f,%f\n", CACurrentMediaTime(), scrollView.contentOffset.x, scrollView.contentOffset.y)
+        let text = String(format: "Scroll,%ld,%f,%f\n", Int64(Date().timeIntervalSince1970 * 1000), scrollView.contentOffset.x, scrollView.contentOffset.y)
         
         if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
             fileUpdater.seekToEndOfFile()
@@ -144,7 +144,7 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
     }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        let text = String(format: "Zoom,%f,%f\n", CACurrentMediaTime(), scrollView.zoomScale)
+        let text = String(format: "Zoom,%ld,%f\n", Int64(Date().timeIntervalSince1970 * 1000), scrollView.zoomScale)
         
         if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
             fileUpdater.seekToEndOfFile()
@@ -236,7 +236,7 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
             let x = Int(round(smoothEyeLookAtPositionX + self.phoneScreenPointSize!.width / 2))
             let y = Int(round(smoothEyeLookAtPositionY + self.phoneScreenPointSize!.height / 2))
             
-            let text = String(format: "GazePoint,%f,%d,%d\n", CACurrentMediaTime(), x, y)
+            let text = String(format: "GazePoint,%ld,%d,%d\n", Int64(Date().timeIntervalSince1970 * 1000), x, y)
             
             if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
                 fileUpdater.seekToEndOfFile()
