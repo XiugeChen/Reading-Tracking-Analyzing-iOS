@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -42,23 +44,23 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3Ga-9f-soQ" userLabel="ButtonStackView">
                                 <rect key="frame" x="0.0" y="417" width="414" height="187"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="bottom" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKZ-Y2-Oba">
-                                        <rect key="frame" x="122" y="0.0" width="170" height="94.333333333333329"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="bottom" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKZ-Y2-Oba">
+                                        <rect key="frame" x="122.66666666666669" y="0.0" width="169" height="94.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Start Prelab">
-                                            <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
                                         </state>
                                         <connections>
                                             <segue destination="KIu-bc-EyW" kind="show" id="d2L-Hi-85K"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sty-mr-oXJ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sty-mr-oXJ">
                                         <rect key="frame" x="111" y="102.33333333333337" width="192" height="84.666666666666686"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Start Reading">
-                                            <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
                                         </state>
                                         <connections>
                                             <segue destination="Fml-wl-0sv" kind="show" id="wt4-up-P0U"/>
@@ -70,13 +72,13 @@
                                 <rect key="frame" x="0.0" y="704" width="414" height="58"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="interaction.design.lab@unimelb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWC-Tn-xsf">
-                                        <rect key="frame" x="70" y="0.0" width="274" height="24"/>
+                                        <rect key="frame" x="69.666666666666686" y="0.0" width="275" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reseach use only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPL-LH-miO">
-                                        <rect key="frame" x="134.33333333333337" y="34" width="145.66666666666663" height="24"/>
+                                        <rect key="frame" x="133.33333333333331" y="34" width="147.33333333333331" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -84,7 +86,8 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SNe-2l-zuY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1mh-Os-AJY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Ga-9f-soQ" secondAttribute="trailing" id="5cA-ZQ-lnI"/>
@@ -97,7 +100,6 @@
                             <constraint firstItem="3Ga-9f-soQ" firstAttribute="top" secondItem="EX4-eJ-Yx8" secondAttribute="bottom" constant="100" id="xki-Bm-1Rq"/>
                             <constraint firstItem="SNe-2l-zuY" firstAttribute="top" secondItem="3Ga-9f-soQ" secondAttribute="bottom" constant="100" id="yPZ-GZ-yl5"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="kOK-ND-ojY"/>
                 </viewController>
@@ -116,55 +118,55 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HwS-dE-VMp" userLabel="ButtonStackView">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1e-Zt-TZv">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1e-Zt-TZv">
                                         <rect key="frame" x="158" y="0.0" width="98" height="163.66666666666666"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Test 1">
-                                            <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
                                         </state>
                                         <connections>
                                             <action selector="test1Clicked:" destination="Fml-wl-0sv" eventType="touchUpInside" id="x2q-mg-feR"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JK0-AD-ZnL">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JK0-AD-ZnL">
                                         <rect key="frame" x="155.66666666666666" y="171.66666666666669" width="102.99999999999997" height="163.66666666666669"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Test 2">
-                                            <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
                                         </state>
                                         <connections>
                                             <action selector="test2Clicked:" destination="Fml-wl-0sv" eventType="touchUpInside" id="SO1-Rz-cdC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hT1-RV-3pg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hT1-RV-3pg">
                                         <rect key="frame" x="155" y="343.33333333333331" width="104" height="163.33333333333331"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Test 3">
-                                            <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
                                         </state>
                                         <connections>
                                             <action selector="test3Clicked:" destination="Fml-wl-0sv" eventType="touchUpInside" id="fsF-dF-21d"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pX-Sr-HMv">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pX-Sr-HMv">
                                         <rect key="frame" x="155" y="514.66666666666663" width="104" height="163.66666666666663"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Test 4">
-                                            <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
                                         </state>
                                         <connections>
                                             <action selector="test4Clicked:" destination="Fml-wl-0sv" eventType="touchUpInside" id="uQs-09-rNH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upy-it-ypf">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upy-it-ypf">
                                         <rect key="frame" x="164" y="686.33333333333337" width="86" height="131.66666666666663"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Back">
-                                            <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
                                         </state>
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="show" id="tIe-fK-2z2"/>
@@ -173,14 +175,14 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="HLQ-ml-3QB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HLQ-ml-3QB" firstAttribute="trailing" secondItem="HwS-dE-VMp" secondAttribute="trailing" id="35G-SC-E2N"/>
                             <constraint firstItem="HwS-dE-VMp" firstAttribute="top" secondItem="HLQ-ml-3QB" secondAttribute="top" id="CDR-rV-K0I"/>
                             <constraint firstItem="HLQ-ml-3QB" firstAttribute="bottom" secondItem="HwS-dE-VMp" secondAttribute="bottom" id="HHa-vh-HFt"/>
                             <constraint firstItem="HwS-dE-VMp" firstAttribute="leading" secondItem="HLQ-ml-3QB" secondAttribute="leading" id="v2h-tz-wpg"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="HLQ-ml-3QB"/>
                     </view>
                     <navigationItem key="navigationItem" id="RWM-yX-SoI"/>
                     <connections>
@@ -204,38 +206,38 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prelab Section" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0n-b3-NSn">
-                                        <rect key="frame" x="102.33333333333333" y="0.0" width="209.66666666666669" height="166.66666666666666"/>
+                                        <rect key="frame" x="102" y="0.0" width="210" height="166.66666666666666"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oK-HF-cvh">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oK-HF-cvh">
                                         <rect key="frame" x="176.66666666666666" y="166.66666666666663" width="61" height="217"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <state key="normal" title="Test">
-                                            <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
                                         </state>
                                         <connections>
                                             <segue destination="JIW-FB-M02" kind="show" id="wy7-NX-uEo"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6B-v6-dDp">
-                                        <rect key="frame" x="122" y="383.66666666666669" width="170" height="217.33333333333331"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6B-v6-dDp">
+                                        <rect key="frame" x="122.66666666666669" y="383.66666666666669" width="169" height="217.33333333333331"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <size key="titleShadowOffset" width="1" height="0.0"/>
                                         <state key="normal" title="Start Prelab">
-                                            <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
                                         </state>
                                         <connections>
                                             <segue destination="dHJ-bj-xBU" kind="show" id="Cms-kW-0Tz"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Bx-mE-mhl">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Bx-mE-mhl">
                                         <rect key="frame" x="170.66666666666666" y="601" width="73" height="217"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Back">
-                                            <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
                                         </state>
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="show" id="0Ob-AR-reN"/>
@@ -244,14 +246,14 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="SKs-GJ-B9F"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rGe-r2-gea" firstAttribute="top" secondItem="SKs-GJ-B9F" secondAttribute="top" id="ZAV-nu-hKj"/>
                             <constraint firstItem="rGe-r2-gea" firstAttribute="leading" secondItem="SKs-GJ-B9F" secondAttribute="leading" id="liu-Ou-24k"/>
                             <constraint firstItem="SKs-GJ-B9F" firstAttribute="bottom" secondItem="rGe-r2-gea" secondAttribute="bottom" id="sgq-26-8sJ"/>
                             <constraint firstItem="SKs-GJ-B9F" firstAttribute="trailing" secondItem="rGe-r2-gea" secondAttribute="trailing" id="uMf-M2-sjI"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="SKs-GJ-B9F"/>
                     </view>
                     <navigationItem key="navigationItem" id="cRc-Tz-Hkw"/>
                 </viewController>
@@ -267,11 +269,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bd-o8-wqN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bd-o8-wqN">
                                 <rect key="frame" x="0.0" y="805" width="414" height="57"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <state key="normal" title="Continue">
-                                    <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" systemColor="systemTealColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="KIu-bc-EyW" kind="show" id="NWR-B0-80z"/>
@@ -281,7 +283,8 @@
                                 <rect key="frame" x="0.0" y="84" width="414" height="691"/>
                             </arscnView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="MrO-UQ-jOw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0bd-o8-wqN" firstAttribute="top" secondItem="hdI-le-5mI" secondAttribute="bottom" constant="30" id="6zp-jZ-Ln2"/>
                             <constraint firstItem="hdI-le-5mI" firstAttribute="trailing" secondItem="MrO-UQ-jOw" secondAttribute="trailing" id="Aw4-1I-iGA"/>
@@ -291,7 +294,6 @@
                             <constraint firstItem="MrO-UQ-jOw" firstAttribute="bottom" secondItem="0bd-o8-wqN" secondAttribute="bottom" id="UZb-Iy-dbb"/>
                             <constraint firstItem="MrO-UQ-jOw" firstAttribute="trailing" secondItem="0bd-o8-wqN" secondAttribute="trailing" id="ufv-e3-2DE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="MrO-UQ-jOw"/>
                     </view>
                     <navigationItem key="navigationItem" id="SIS-a8-Xin"/>
                     <connections>
@@ -442,7 +444,7 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4oY-qC-9V4" userLabel="Scene View">
                                 <rect key="frame" x="0.0" y="44" width="414" height="684"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxL-5o-yaL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxL-5o-yaL">
                                 <rect key="frame" x="325" y="791" width="69" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Back"/>
@@ -451,6 +453,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="DNz-iA-Vtr"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DNz-iA-Vtr" firstAttribute="bottom" secondItem="KeK-Fl-3gj" secondAttribute="bottom" constant="24" id="9hj-eh-ZRR"/>
@@ -468,7 +471,6 @@
                             <constraint firstItem="KeK-Fl-3gj" firstAttribute="leading" secondItem="DNz-iA-Vtr" secondAttribute="leading" constant="24" id="ud7-Tw-KQP"/>
                             <constraint firstItem="4oY-qC-9V4" firstAttribute="top" secondItem="DNz-iA-Vtr" secondAttribute="top" id="v8z-Tp-YuQ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="DNz-iA-Vtr"/>
                     </view>
                     <navigationItem key="navigationItem" id="wLD-x2-u8V"/>
                     <connections>
@@ -493,13 +495,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DY8-8O-o3I">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DY8-8O-o3I">
                                 <rect key="frame" x="40" y="782" width="334" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Finish Reading">
-                                    <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" systemColor="systemTealColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="onClickFinish:" destination="mod-c1-7hr" eventType="touchUpInside" id="NV6-pZ-RMy"/>
                                     <segue destination="Gkw-4E-h5X" kind="show" id="T83-Wc-Xkx"/>
                                 </connections>
                             </button>
@@ -515,7 +518,8 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="w5c-pf-c6E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="w5c-pf-c6E" firstAttribute="bottom" secondItem="DY8-8O-o3I" secondAttribute="bottom" constant="20" id="0aW-Mn-gZJ"/>
                             <constraint firstItem="ARF-AB-Xuh" firstAttribute="top" secondItem="w5c-pf-c6E" secondAttribute="top" constant="40" id="Ccn-In-p1H"/>
@@ -529,7 +533,6 @@
                             <constraint firstItem="SES-ep-5S0" firstAttribute="leading" secondItem="w5c-pf-c6E" secondAttribute="leading" id="lsf-8Q-8Fe"/>
                             <constraint firstItem="DY8-8O-o3I" firstAttribute="top" secondItem="ARF-AB-Xuh" secondAttribute="bottom" constant="10" id="uhM-Ub-0GE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="w5c-pf-c6E"/>
                     </view>
                     <navigationItem key="navigationItem" id="xB2-Jj-9au"/>
                     <connections>
@@ -560,7 +563,7 @@
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="shadowColor" systemColor="darkTextColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q: According to the passage, which of the following is correct about walls in China?" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9r-a8-THb">
                                 <rect key="frame" x="20" y="130" width="374" height="89.666666666666686"/>
@@ -568,7 +571,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="H3l-Rv-eNR">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="H3l-Rv-eNR">
                                 <rect key="frame" x="20" y="434" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="A. People usually built walls around villages and towns, but never inside them.">
@@ -576,7 +579,7 @@
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BaQ-0m-g7i">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BaQ-0m-g7i">
                                 <rect key="frame" x="20" y="550" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="B. Walls were an essential part of villages, towns, houses and even temples.">
@@ -584,7 +587,7 @@
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gP7-qQ-IQj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gP7-qQ-IQj">
                                 <rect key="frame" x="20" y="666" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="C. Only critical villages and towns are walled.">
@@ -592,18 +595,19 @@
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZQ-oG-81Z">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZQ-oG-81Z">
                                 <rect key="frame" x="0.0" y="782" width="414" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Finish Answering">
-                                    <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" systemColor="systemTealColor"/>
                                 </state>
                                 <connections>
                                     <action selector="finishClicked:" destination="Gkw-4E-h5X" eventType="touchUpInside" id="5mb-2n-Pgo"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="JtE-bb-Mqo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="H3l-Rv-eNR" firstAttribute="trailing" secondItem="JtE-bb-Mqo" secondAttribute="trailing" constant="-20" id="4wM-4z-hHJ"/>
                             <constraint firstItem="RZQ-oG-81Z" firstAttribute="top" secondItem="gP7-qQ-IQj" secondAttribute="bottom" constant="80" id="8NQ-Ff-hm7"/>
@@ -624,7 +628,6 @@
                             <constraint firstItem="BaQ-0m-g7i" firstAttribute="top" secondItem="H3l-Rv-eNR" secondAttribute="bottom" constant="80" id="lhr-la-t0e"/>
                             <constraint firstItem="C9r-a8-THb" firstAttribute="trailing" secondItem="JtE-bb-Mqo" secondAttribute="trailing" constant="-20" id="nuC-OU-7ew"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="JtE-bb-Mqo"/>
                     </view>
                     <navigationItem key="navigationItem" id="9Yd-0y-aoA"/>
                     <connections>
@@ -651,18 +654,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFY-9C-Xfb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFY-9C-Xfb">
                                 <rect key="frame" x="0.0" y="782" width="414" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Continue">
-                                    <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" systemColor="systemTealColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="Fml-wl-0sv" kind="show" id="gaL-UV-Wm9"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Nfr-oV-YGQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Nfr-oV-YGQ" firstAttribute="trailing" secondItem="XFY-9C-Xfb" secondAttribute="trailing" id="9X1-Ah-qmb"/>
                             <constraint firstItem="OW7-Wf-MSO" firstAttribute="top" secondItem="Nfr-oV-YGQ" secondAttribute="top" id="Dsy-YE-9WF"/>
@@ -672,7 +676,6 @@
                             <constraint firstItem="XFY-9C-Xfb" firstAttribute="leading" secondItem="Nfr-oV-YGQ" secondAttribute="leading" id="vff-GJ-TB1"/>
                             <constraint firstItem="OW7-Wf-MSO" firstAttribute="leading" secondItem="Nfr-oV-YGQ" secondAttribute="leading" id="zBl-X2-GiD"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Nfr-oV-YGQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="lF3-pK-njG"/>
                 </viewController>
@@ -688,11 +691,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xy-2B-Wd5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xy-2B-Wd5">
                                 <rect key="frame" x="0.0" y="782" width="414" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Continue">
-                                    <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" systemColor="systemTealColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="mod-c1-7hr" kind="show" id="h3H-5e-vgy"/>
@@ -716,7 +719,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="eX6-aK-6P9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="eX6-aK-6P9">
                                 <rect key="frame" x="20" y="358.66666666666669" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Next">
@@ -725,7 +728,8 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="W8y-m4-t2e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7YE-XL-eyx" firstAttribute="leading" secondItem="W8y-m4-t2e" secondAttribute="leading" id="7wq-dJ-h9Y"/>
                             <constraint firstItem="W8y-m4-t2e" firstAttribute="trailing" secondItem="eX6-aK-6P9" secondAttribute="trailing" constant="20" id="HMp-aB-YFG"/>
@@ -740,7 +744,6 @@
                             <constraint firstItem="rZU-Xi-yqQ" firstAttribute="top" secondItem="7YE-XL-eyx" secondAttribute="bottom" constant="80" id="tKb-Tn-J0q"/>
                             <constraint firstItem="3Xy-2B-Wd5" firstAttribute="leading" secondItem="W8y-m4-t2e" secondAttribute="leading" id="tUq-Yo-8d4"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="W8y-m4-t2e"/>
                     </view>
                     <navigationItem key="navigationItem" id="nrG-lz-dUL"/>
                 </viewController>
@@ -757,4 +760,15 @@
         <segue reference="gaL-UV-Wm9"/>
         <segue reference="0Ob-AR-reN"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

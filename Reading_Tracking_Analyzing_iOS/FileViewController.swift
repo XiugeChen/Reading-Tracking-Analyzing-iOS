@@ -130,6 +130,14 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
             catch {
                 print("[Error]: Write to file failed, file:", self.fileURL!)
             }
+            
+            let start_text = String(format: "#Start_reading,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
+            
+            if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
+                fileUpdater.seekToEndOfFile()
+                fileUpdater.write(start_text.data(using: .utf8)!)
+                fileUpdater.closeFile()
+            }
         }
     }
     
@@ -149,6 +157,16 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
         if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
             fileUpdater.seekToEndOfFile()
             fileUpdater.write(text.data(using: .utf8)!)
+            fileUpdater.closeFile()
+        }
+    }
+    @IBAction func onClickFinish(_ sender: UIButton) {
+        
+        let end_text = String(format: "#End_reading,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
+        
+        if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
+            fileUpdater.seekToEndOfFile()
+            fileUpdater.write(end_text.data(using: .utf8)!)
             fileUpdater.closeFile()
         }
     }
