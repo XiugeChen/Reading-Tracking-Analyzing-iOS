@@ -276,7 +276,7 @@
                                     <color key="titleShadowColor" systemColor="systemTealColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="KIu-bc-EyW" kind="show" id="NWR-B0-80z"/>
+                                    <action selector="onClickContinue:" destination="dHJ-bj-xBU" eventType="touchUpInside" id="9ep-rD-AIo"/>
                                 </connections>
                             </button>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdI-le-5mI" userLabel="Scene View">
@@ -299,6 +299,7 @@
                     <connections>
                         <outlet property="cont_btn" destination="0bd-o8-wqN" id="pI6-sp-2uX"/>
                         <outlet property="sceneView" destination="hdI-le-5mI" id="cSc-6E-oCW"/>
+                        <segue destination="KIu-bc-EyW" kind="show" identifier="PrelabRunToPrelabSelect" id="4i3-Ue-gQt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IlC-TP-Swi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -503,7 +504,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onClickFinish:" destination="mod-c1-7hr" eventType="touchUpInside" id="NV6-pZ-RMy"/>
-                                    <segue destination="Gkw-4E-h5X" kind="show" id="T83-Wc-Xkx"/>
                                 </connections>
                             </button>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SES-ep-5S0" userLabel="Scene View">
@@ -538,6 +538,7 @@
                     <connections>
                         <outlet property="sceneView" destination="SES-ep-5S0" id="rm8-lk-Ryw"/>
                         <outlet property="webView" destination="ARF-AB-Xuh" id="6Xv-Ce-j2c"/>
+                        <segue destination="Gkw-4E-h5X" kind="show" identifier="ReadingToQuestionPage" id="Z75-tb-iBc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Dy-fO-EV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -753,11 +754,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="T83-Wc-Xkx"/>
         <segue reference="x2S-uD-Zlj"/>
-        <segue reference="R59-4M-1KD"/>
-        <segue reference="PAM-Fr-5r3"/>
-        <segue reference="gaL-UV-Wm9"/>
+        <segue reference="h3H-5e-vgy"/>
+        <segue reference="4i3-Ue-gQt"/>
+        <segue reference="wt4-up-P0U"/>
         <segue reference="0Ob-AR-reN"/>
     </inferredMetricsTieBreakers>
     <resources>

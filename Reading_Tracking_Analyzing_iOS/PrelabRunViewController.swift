@@ -9,12 +9,16 @@
 import UIKit
 import SceneKit
 import ARKit
+import AVFoundation
 
-class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
+class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, AVCaptureFileOutputRecordingDelegate, AVCaptureDepthDataOutputDelegate {
+    
+    func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
+    }
     
     var fileURL: URL?
     
-    // display dots and collect gaze data
+    // MARK: - Variables related to display dots and collect gaze data
     @IBOutlet var cont_btn: UIButton!
     
     let X_POS: Array<Float> = [0.1, 0.9, 0.5, 0.1, 0.9]
@@ -29,7 +33,14 @@ class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDel
     var mNumDots: Int = 0
     var mCurrentCircle: CircleView?
     
-    // gaze tracking
+    // MARK: - Variables related to Video recordings
+    let captureSession = AVCaptureSession()
+    let sessionOutput = AVCapturePhotoOutput()
+    let movieOutput = AVCaptureMovieFileOutput()
+    
+    var isRecording = false
+    
+    // MARK: - Variables related to Arkit and truthDepth camera
     @IBOutlet var sceneView: ARSCNView!
     
     var faceNode: SCNNode = SCNNode()
@@ -84,6 +95,7 @@ class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDel
     
     var eyeLookAtPositionYs: [CGFloat] = []
 
+    // MARK: - View Callback functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -121,8 +133,7 @@ class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDel
         lookAtTargetEyeRNode.position.z = 2
         
         // data file to write
-        let currentTime = CACurrentMediaTime();
-        let file = String(format: "%f.txt", currentTime)
+        let file = String(format: "cali_%ld.txt", Int64(Date().timeIntervalSince1970 * 1000))
 
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
 
@@ -139,8 +150,72 @@ class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDel
                 print("[Error]: Write to file failed, file:", self.fileURL!)
             }
         }
+        
+        let start_text = String(format: "#Cali_start,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
+        
+        record_data(text: start_text)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Create a session configuration
+        guard ARFaceTrackingConfiguration.isSupported else { return }
+        let configuration = ARFaceTrackingConfiguration()
+        configuration.isLightEstimationEnabled = true
+        
+        // Run the view's session
+        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        
+        // Prepare for RGB video recording
+        if let device = AVCaptureDevice.default(.builtInTrueDepthCamera,
+                                                for: .video, position: .front) {
+            do {
+                
+                let input = try AVCaptureDeviceInput(device: device)
+                
+                if captureSession.canAddInput(input){
+                    captureSession.sessionPreset = AVCaptureSession.Preset.photo
+                    captureSession.addInput(input)
+                    
+                    if captureSession.canAddOutput(sessionOutput){
+                        
+                        captureSession.addOutput(sessionOutput)
+                    }
+                    
+                    captureSession.addOutput(movieOutput)
+                    
+                    captureSession.startRunning()
+                }
+                
+            } catch {
+                print("Error")
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.startRecording()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Pause the view's session
+        sceneView.session.pause()
+    }
+    
+    @IBAction func onClickContinue(_ sender: UIButton) {
+        stopRecording()
+        
+        let end_text = String(format: "#Cali_end,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
+        
+        record_data(text: end_text)
+        
+        performSegue(withIdentifier: "PrelabRunToPrelabSelect", sender: self)
+    }
+    
+    // MARK: - Helper functions related to calibration
     @objc func timerTicked() {
         if (mNumDots >= X_POS.count) {
             mTimer?.invalidate()
@@ -187,53 +262,69 @@ class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDel
         var text = ""
         
         for samples in mSamples {
+            text = ""
+            let cali_x = Int(Float(mScreenWidth) * X_POS[i])
+            let cali_y = Int(Float(mScreenHeight) * Y_POS[i])
+            
+            let cali_point_text = String(format: "#Cali_point: x=(%d), y=(%d)\n", cali_x, cali_y)
+            
+            record_data(text: cali_point_text)
+            
             for sample in samples {
-                result[i].x += abs(sample.x - Int(Float(mScreenWidth) * X_POS[i]))
-                result[i].y += abs(sample.y - Int(Float(mScreenHeight) * Y_POS[i]))
+                result[i].x += abs(sample.x - cali_x)
+                result[i].y += abs(sample.y - cali_y)
                 
                 let circleView = CircleView(frame: CGRect(x: sample.x, y: sample.y, width: 20, height: 20))
                 circleView.setColor(color: "blue")
                 view.addSubview(circleView)
                 
                 // write calibration to file
-                text.append(String(format: "Data,%f,%d,%d,%d,%d\n", CACurrentMediaTime(), Int(Float(mScreenWidth) * X_POS[i]), Int(Float(mScreenHeight) * Y_POS[i]), sample.x, sample.y))
+                text.append(String(format: "CaliData,%ld,%d,%d,%d,%d\n", Int64(Date().timeIntervalSince1970 * 1000), cali_x, cali_y, sample.x, sample.y))
             }
             
+            record_data(text: text)
+            
             if (samples.count != 0) {
-                print("Calibration %d: total points=(%d), avgDiff=(%f, %f)", i, samples.count, result[i].x / samples.count, result[i].y / samples.count)
+                let result_text = String(format: "#Calibration %d: total points=(%d), avgDiff=(%f, %f)\n", i, samples.count, result[i].x / samples.count, result[i].y / samples.count)
+                
+                record_data(text: result_text)
+                
+                print(result_text)
             }
             
             i += 1
         }
         
-        if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
-            fileUpdater.seekToEndOfFile()
-            fileUpdater.write(text.data(using: .utf8)!)
-            fileUpdater.closeFile()
-        }
-        
         cont_btn.isHidden = false
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    // MARK: - Helper functions related to video recordings
+    func startRecording(){
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         
-        // Create a session configuration
-        guard ARFaceTrackingConfiguration.isSupported else { return }
-        let configuration = ARFaceTrackingConfiguration()
-        configuration.isLightEstimationEnabled = true
+        let videoName = String(format: "cali_%ld.mov", Int64(Date().timeIntervalSince1970 * 1000))
+        let fileUrl = paths[0].appendingPathComponent(videoName)
+        movieOutput.startRecording(to: fileUrl, recordingDelegate: self)
+        print("[INFO] Cali recording started with file: ", fileUrl.absoluteString)
+        self.isRecording = true
         
-        // Run the view's session
-        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        let rec_start_text = String(format: "#Cali_Start_rgb_video_recording,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
+        
+        record_data(text: rec_start_text)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    func stopRecording(){
+        movieOutput.stopRecording()
+        self.isRecording = false
         
-        // Pause the view's session
-        sceneView.session.pause()
+        let rec_end_text = String(format: "#Cali_Stop_rgb_video_recording,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
+        
+        record_data(text: rec_end_text)
+        
+        print("[INFO] Cali recording ended")
     }
     
+    // MARK: - Helper functions related to gaze tracking
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         
         faceNode.transform = node.transform
@@ -303,6 +394,15 @@ class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDel
             let y = Int(round(smoothEyeLookAtPositionY + self.phoneScreenPointSize!.height / 2))
             
             self.mSamples[self.mNumDots].append((x: x, y: y))
+        }
+    }
+    
+    // MARK: - Helper functions related to data recording
+    func record_data(text: String) {
+        if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
+            fileUpdater.seekToEndOfFile()
+            fileUpdater.write(text.data(using: .utf8)!)
+            fileUpdater.closeFile()
         }
     }
 }

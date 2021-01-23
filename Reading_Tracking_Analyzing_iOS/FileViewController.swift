@@ -10,8 +10,12 @@ import UIKit
 import SceneKit
 import ARKit
 import WebKit
+import AVFoundation
 
-class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UIScrollViewDelegate {
+class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UIScrollViewDelegate, AVCaptureFileOutputRecordingDelegate, AVCaptureDepthDataOutputDelegate {
+    
+    func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
+    }
     
     var fileURL: URL?
     
@@ -19,6 +23,14 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
     
     @IBOutlet var webView: WKWebView!
     
+    // MARK: - Variables related to Video recordings
+    let captureSession = AVCaptureSession()
+    let sessionOutput = AVCapturePhotoOutput()
+    let movieOutput = AVCaptureMovieFileOutput()
+    
+    var isRecording = false
+    
+    // MARK: - Variables related to Arkit and truthDepth camera
     var faceNode: SCNNode = SCNNode()
     
     var eyeLNode: SCNNode = {
@@ -70,6 +82,8 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
     var eyeLookAtPositionXs: [CGFloat] = []
     
     var eyeLookAtPositionYs: [CGFloat] = []
+    
+    // MARK: - View Callback functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,45 +144,11 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
             catch {
                 print("[Error]: Write to file failed, file:", self.fileURL!)
             }
-            
-            let start_text = String(format: "#Start_reading,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
-            
-            if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
-                fileUpdater.seekToEndOfFile()
-                fileUpdater.write(start_text.data(using: .utf8)!)
-                fileUpdater.closeFile()
-            }
         }
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let text = String(format: "Scroll,%ld,%f,%f\n", Int64(Date().timeIntervalSince1970 * 1000), scrollView.contentOffset.x, scrollView.contentOffset.y)
         
-        if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
-            fileUpdater.seekToEndOfFile()
-            fileUpdater.write(text.data(using: .utf8)!)
-            fileUpdater.closeFile()
-        }
-    }
-    
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        let text = String(format: "Zoom,%ld,%f\n", Int64(Date().timeIntervalSince1970 * 1000), scrollView.zoomScale)
+        let start_text = String(format: "#Start_reading,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
         
-        if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
-            fileUpdater.seekToEndOfFile()
-            fileUpdater.write(text.data(using: .utf8)!)
-            fileUpdater.closeFile()
-        }
-    }
-    @IBAction func onClickFinish(_ sender: UIButton) {
-        
-        let end_text = String(format: "#End_reading,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
-        
-        if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
-            fileUpdater.seekToEndOfFile()
-            fileUpdater.write(end_text.data(using: .utf8)!)
-            fileUpdater.closeFile()
-        }
+        record_data(text: start_text)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -181,6 +161,36 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
         
         // Run the view's session
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        
+        // Prepare for RGB video recording
+        if let device = AVCaptureDevice.default(.builtInTrueDepthCamera,
+                                                for: .video, position: .front) {
+            do {
+                
+                let input = try AVCaptureDeviceInput(device: device)
+                
+                if captureSession.canAddInput(input){
+                    captureSession.sessionPreset = AVCaptureSession.Preset.photo
+                    captureSession.addInput(input)
+                    
+                    if captureSession.canAddOutput(sessionOutput){
+                        
+                        captureSession.addOutput(sessionOutput)
+                    }
+                    
+                    captureSession.addOutput(movieOutput)
+                    
+                    captureSession.startRunning()
+                }
+                
+            } catch {
+                print("Error")
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.startRecording()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -190,6 +200,57 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
         sceneView.session.pause()
     }
     
+    // MARK: - Callback functions related to interaction
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let text = String(format: "Scroll,%ld,%f,%f\n", Int64(Date().timeIntervalSince1970 * 1000), scrollView.contentOffset.x, scrollView.contentOffset.y)
+        
+        record_data(text: text)
+    }
+    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        let text = String(format: "Zoom,%ld,%f\n", Int64(Date().timeIntervalSince1970 * 1000), scrollView.zoomScale)
+        
+        record_data(text: text)
+    }
+    
+    // MARK: - Callback functions related to button clicking
+    @IBAction func onClickFinish(_ sender: UIButton) {
+        stopRecording()
+        
+        let end_text = String(format: "#End_reading,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
+        
+        record_data(text: end_text)
+        
+        performSegue(withIdentifier: "ReadingToQuestionPage", sender: self)
+    }
+    
+    // MARK: - Helper functions related to video recordings
+    func startRecording(){
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        
+        let videoName = String(format: "%ld.mov", Int64(Date().timeIntervalSince1970 * 1000))
+        let fileUrl = paths[0].appendingPathComponent(videoName)
+        movieOutput.startRecording(to: fileUrl, recordingDelegate: self)
+        print("[INFO] Recording started with file: ", fileUrl.absoluteString)
+        self.isRecording = true
+        
+        let rec_start_text = String(format: "#Start_rgb_video_recording,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
+        
+        record_data(text: rec_start_text)
+    }
+    
+    func stopRecording(){
+        movieOutput.stopRecording()
+        self.isRecording = false
+        
+        let rec_end_text = String(format: "#Stop_rgb_video_recording,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
+        
+        record_data(text: rec_end_text)
+        
+        print("[INFO] Recording ended")
+    }
+    
+    // MARK: - Helper functions related to gaze tracking
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         
         faceNode.transform = node.transform
@@ -256,11 +317,16 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
             
             let text = String(format: "GazePoint,%ld,%d,%d\n", Int64(Date().timeIntervalSince1970 * 1000), x, y)
             
-            if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
-                fileUpdater.seekToEndOfFile()
-                fileUpdater.write(text.data(using: .utf8)!)
-                fileUpdater.closeFile()
-            }
+            self.record_data(text: text)
+        }
+    }
+    
+    // MARK: - Helper functions related to data recording
+    func record_data(text: String) {
+        if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
+            fileUpdater.seekToEndOfFile()
+            fileUpdater.write(text.data(using: .utf8)!)
+            fileUpdater.closeFile()
         }
     }
 }
