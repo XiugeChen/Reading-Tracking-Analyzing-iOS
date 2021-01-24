@@ -19,6 +19,10 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
     
     var fileURL: URL?
     
+    // countdown timer
+    @IBOutlet var countdownL: UILabel!
+    var countdown = 255
+    
     @IBOutlet var sceneView: ARSCNView!
     
     @IBOutlet var webView: WKWebView!
@@ -124,6 +128,11 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
                 let url: URL! = URL(string: URLS_SOCIAL[ARTICLE_ID])
                 webView.load(URLRequest(url: url))
                 break
+        }
+        
+        // set countdown timer
+        if (READING_MODE[TEST_ID][ARTICLE_ID] == ReadingMode.shallow) {
+            var timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
         }
         
         // data file to write
@@ -327,6 +336,24 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
             fileUpdater.seekToEndOfFile()
             fileUpdater.write(text.data(using: .utf8)!)
             fileUpdater.closeFile()
+        }
+    }
+    
+    // MARK: - Helper functions related to countdown
+    @objc func updateCounter() {
+        //example functionality
+        if countdown >= 0 {
+            countdownL.text = String(format: "Time Remaining: %d min %d sec", countdown / 60, countdown % 60)
+            countdown -= 1
+        }
+        else {
+            stopRecording()
+            
+            let end_text = String(format: "#End_reading,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
+            
+            record_data(text: end_text)
+            
+            performSegue(withIdentifier: "ReadingToQuestionPage", sender: self)
         }
     }
 }
