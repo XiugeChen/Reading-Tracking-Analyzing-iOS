@@ -35,10 +35,10 @@ class FileListViewController: UIViewController {
     }
     
     func executeSegue() {
-        ARTICLE_ID = 0
+        ARTICLE_SEQ = 0
         
         if (URLS_SOCIAL.count >= 1) {
-            switch (READING_MODE[TEST_ID][ARTICLE_ID]) {
+            switch (READING_MODE[TEST_ID][ARTICLE_SEQ]) {
                 case ReadingMode.deep:
                     performSegue(withIdentifier: "ListToRead", sender: self)
                     break

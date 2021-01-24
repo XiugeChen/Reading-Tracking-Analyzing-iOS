@@ -119,20 +119,22 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
         // set up web view
         webView.scrollView.delegate = self
         
-        switch (DISPLAY[TEST_ID][ARTICLE_ID]) {
+        let articleId = ARTICLES[ARTICLE_SEQ]
+        
+        switch (DISPLAY[TEST_ID][ARTICLE_SEQ]) {
             case DisplayMethod.news:
-                let url: URL! = URL(string: URLS_NEWS[ARTICLE_ID])
+                let url: URL! = URL(string: URLS_NEWS[articleId])
                 webView.load(URLRequest(url: url))
                 break
             case DisplayMethod.social:
-                let url: URL! = URL(string: URLS_SOCIAL[ARTICLE_ID])
+                let url: URL! = URL(string: URLS_SOCIAL[articleId])
                 webView.load(URLRequest(url: url))
                 break
         }
         
         // set countdown timer
-        if (READING_MODE[TEST_ID][ARTICLE_ID] == ReadingMode.shallow) {
-            var timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+        if (READING_MODE[TEST_ID][ARTICLE_SEQ] == ReadingMode.shallow) {
+            _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
         }
         
         // data file to write

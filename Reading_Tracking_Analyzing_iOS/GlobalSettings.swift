@@ -9,7 +9,7 @@
 import Foundation
 
 let QUESTION_NUM = 20
-let PASSAGE_NUM = 4
+let ARTICLE_NUM = 4
 
 enum DisplayMethod {
     case social
@@ -32,6 +32,8 @@ let URLS_NEWS = ["https://cxgsimon.medium.com/the-shed-3865fd8b381a",
      "https://cxgsimon.medium.com/hedgehog-experience-29d8927b7e5c",
      "https://cxgsimon.medium.com/a-not-so-bad-bully-8c0ce6236f4a"]
 
+let ARTICLES = [0, 1, 2, 3].shuffled()
+
 let QUESTIONS = [PAS1_QUESTION, PAS2_QUESTION, PAS3_QUESTION, PAS4_QUESTION]
 
 let CHOICES = [PAS1_CHOICE, PAS2_CHOICE, PAS3_CHOICE, PAS4_CHOICE]
@@ -47,7 +49,7 @@ let READING_MODE = [[ReadingMode.deep, ReadingMode.shallow, ReadingMode.deep, Re
                     [ReadingMode.shallow, ReadingMode.deep, ReadingMode.shallow, ReadingMode.deep]]
 
 var TEST_ID = 0
-var ARTICLE_ID = 0
+var ARTICLE_SEQ = 0
 var QUESTION_ID = 0
 
 var ANSWERS = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]

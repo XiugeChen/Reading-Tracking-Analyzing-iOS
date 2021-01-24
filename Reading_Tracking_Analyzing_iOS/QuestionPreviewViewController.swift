@@ -10,6 +10,8 @@ import UIKit
 
 class QuestionPreviewViewController: UIViewController {
     
+    var articleId = 0
+    
     @IBOutlet var QuestionL: UILabel!
     
     @IBOutlet var ContinueB: UIButton!
@@ -23,14 +25,16 @@ class QuestionPreviewViewController: UIViewController {
         BackB.isEnabled = false
         ContinueB.isEnabled = false
         
-        QuestionL.text = QUESTIONS[ARTICLE_ID][QUESTION_ID]
+        articleId = ARTICLES[ARTICLE_SEQ]
+        
+        QuestionL.text = QUESTIONS[articleId][QUESTION_ID]
     }
     
     @IBAction func onClickNext(_ sender: UIButton) {
         if (QUESTION_ID < QUESTION_NUM - 1) {
             QUESTION_ID = QUESTION_ID + 1
             
-            QuestionL.text = QUESTIONS[ARTICLE_ID][QUESTION_ID]
+            QuestionL.text = QUESTIONS[articleId][QUESTION_ID]
             
             if (QUESTION_ID > 0) {
                 BackB.isEnabled = true
@@ -47,7 +51,7 @@ class QuestionPreviewViewController: UIViewController {
         if (QUESTION_ID > 0) {
             QUESTION_ID = QUESTION_ID - 1
             
-            QuestionL.text = QUESTIONS[ARTICLE_ID][QUESTION_ID]
+            QuestionL.text = QUESTIONS[articleId][QUESTION_ID]
             
             if (QUESTION_ID == 0) {
                 BackB.isEnabled = false

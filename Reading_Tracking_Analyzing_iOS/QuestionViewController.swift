@@ -20,6 +20,8 @@ class QuestionViewController: UIViewController {
     @IBOutlet var nextB: UIButton!
     @IBOutlet var finishB: UIButton!
     
+    var articleId = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -28,10 +30,12 @@ class QuestionViewController: UIViewController {
         backB.isEnabled = false
         finishB.isEnabled = false
         
-        questionL.text = QUESTIONS[ARTICLE_ID][QUESTION_ID]
-        answerA.setTitle(CHOICES[ARTICLE_ID][QUESTION_ID][0], for: .normal)
-        answerB.setTitle(CHOICES[ARTICLE_ID][QUESTION_ID][1], for: .normal)
-        answerC.setTitle(CHOICES[ARTICLE_ID][QUESTION_ID][2], for: .normal)
+        articleId = ARTICLES[ARTICLE_SEQ]
+        
+        questionL.text = QUESTIONS[articleId][QUESTION_ID]
+        answerA.setTitle(CHOICES[articleId][QUESTION_ID][0], for: .normal)
+        answerB.setTitle(CHOICES[articleId][QUESTION_ID][1], for: .normal)
+        answerC.setTitle(CHOICES[articleId][QUESTION_ID][2], for: .normal)
         
         answerA.backgroundColor = UIColor.white
         answerB.backgroundColor = UIColor.white
@@ -87,10 +91,10 @@ class QuestionViewController: UIViewController {
         if (QUESTION_ID > 0) {
             QUESTION_ID = QUESTION_ID - 1
             
-            questionL.text = QUESTIONS[ARTICLE_ID][QUESTION_ID]
-            answerA.setTitle(CHOICES[ARTICLE_ID][QUESTION_ID][0], for: .normal)
-            answerB.setTitle(CHOICES[ARTICLE_ID][QUESTION_ID][1], for: .normal)
-            answerC.setTitle(CHOICES[ARTICLE_ID][QUESTION_ID][2], for: .normal)
+            questionL.text = QUESTIONS[articleId][QUESTION_ID]
+            answerA.setTitle(CHOICES[articleId][QUESTION_ID][0], for: .normal)
+            answerB.setTitle(CHOICES[articleId][QUESTION_ID][1], for: .normal)
+            answerC.setTitle(CHOICES[articleId][QUESTION_ID][2], for: .normal)
             
             switch (ANSWERS[QUESTION_ID]) {
             case "A":
@@ -130,10 +134,10 @@ class QuestionViewController: UIViewController {
         if (QUESTION_ID < QUESTION_NUM - 1) {
             QUESTION_ID = QUESTION_ID + 1
             
-            questionL.text = QUESTIONS[ARTICLE_ID][QUESTION_ID]
-            answerA.setTitle(CHOICES[ARTICLE_ID][QUESTION_ID][0], for: .normal)
-            answerB.setTitle(CHOICES[ARTICLE_ID][QUESTION_ID][1], for: .normal)
-            answerC.setTitle(CHOICES[ARTICLE_ID][QUESTION_ID][2], for: .normal)
+            questionL.text = QUESTIONS[articleId][QUESTION_ID]
+            answerA.setTitle(CHOICES[articleId][QUESTION_ID][0], for: .normal)
+            answerB.setTitle(CHOICES[articleId][QUESTION_ID][1], for: .normal)
+            answerC.setTitle(CHOICES[articleId][QUESTION_ID][2], for: .normal)
             
             switch (ANSWERS[QUESTION_ID]) {
             case "A":
@@ -187,7 +191,7 @@ class QuestionViewController: UIViewController {
     
     @IBAction func finishClicked(_ sender: Any) {
         QUESTION_ID = 0
-        ARTICLE_ID += 1
+        ARTICLE_SEQ += 1
         
         var answer_text = "#Answer"
         
@@ -200,8 +204,8 @@ class QuestionViewController: UIViewController {
         // TODO: record this
         print(answer_text)
         
-        if (ARTICLE_ID < URLS_SOCIAL.count) {
-            switch (READING_MODE[TEST_ID][ARTICLE_ID]) {
+        if (ARTICLE_SEQ < ARTICLE_NUM) {
+            switch (READING_MODE[TEST_ID][ARTICLE_SEQ]) {
                 case ReadingMode.deep:
                     performSegue(withIdentifier: "QuesToRead", sender: self)
                     break

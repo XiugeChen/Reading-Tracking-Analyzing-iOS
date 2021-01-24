@@ -583,7 +583,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="H3l-Rv-eNR">
-                                <rect key="frame" x="20" y="200" width="374" height="36"/>
+                                <rect key="frame" x="20" y="260" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="A">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -594,7 +594,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BaQ-0m-g7i">
-                                <rect key="frame" x="20" y="276" width="374" height="36"/>
+                                <rect key="frame" x="20" y="396" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="B">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -605,7 +605,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gP7-qQ-IQj">
-                                <rect key="frame" x="20" y="352" width="374" height="36"/>
+                                <rect key="frame" x="20" y="532" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="C">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -654,7 +654,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="H3l-Rv-eNR" firstAttribute="trailing" secondItem="JtE-bb-Mqo" secondAttribute="trailing" constant="-20" id="4wM-4z-hHJ"/>
-                            <constraint firstItem="BaQ-0m-g7i" firstAttribute="top" secondItem="H3l-Rv-eNR" secondAttribute="bottom" constant="40" id="7bM-Ow-5Mr"/>
+                            <constraint firstItem="BaQ-0m-g7i" firstAttribute="top" secondItem="H3l-Rv-eNR" secondAttribute="bottom" constant="100" id="7bM-Ow-5Mr"/>
                             <constraint firstItem="RZQ-oG-81Z" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" id="ED1-D2-yps"/>
                             <constraint firstItem="JtE-bb-Mqo" firstAttribute="trailing" secondItem="RZQ-oG-81Z" secondAttribute="trailing" id="GCR-2c-Ugt"/>
                             <constraint firstItem="H3l-Rv-eNR" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" constant="20" id="HCC-AE-xGi"/>
@@ -662,7 +662,7 @@
                             <constraint firstItem="j0u-OG-IZV" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" id="QKB-sZ-dGx"/>
                             <constraint firstItem="gP7-qQ-IQj" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" constant="20" id="QT3-BA-2dp"/>
                             <constraint firstItem="BaQ-0m-g7i" firstAttribute="trailing" secondItem="JtE-bb-Mqo" secondAttribute="trailing" constant="-20" id="R4I-Xu-bi5"/>
-                            <constraint firstItem="gP7-qQ-IQj" firstAttribute="top" secondItem="BaQ-0m-g7i" secondAttribute="bottom" constant="40" id="WQF-1s-hRm"/>
+                            <constraint firstItem="gP7-qQ-IQj" firstAttribute="top" secondItem="BaQ-0m-g7i" secondAttribute="bottom" constant="100" id="WQF-1s-hRm"/>
                             <constraint firstItem="j0u-OG-IZV" firstAttribute="top" secondItem="JtE-bb-Mqo" secondAttribute="top" constant="20" id="Z0s-eI-hka"/>
                             <constraint firstItem="C9r-a8-THb" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" constant="20" id="bVB-Oh-aoU"/>
                             <constraint firstItem="JtE-bb-Mqo" firstAttribute="trailing" secondItem="j0u-OG-IZV" secondAttribute="trailing" id="bwb-SW-Bcc"/>
@@ -670,7 +670,7 @@
                             <constraint firstItem="C9r-a8-THb" firstAttribute="top" secondItem="j0u-OG-IZV" secondAttribute="bottom" constant="20" id="fVp-2v-h89"/>
                             <constraint firstItem="BaQ-0m-g7i" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" constant="20" id="kdj-kv-f1g"/>
                             <constraint firstItem="C9r-a8-THb" firstAttribute="trailing" secondItem="JtE-bb-Mqo" secondAttribute="trailing" constant="-20" id="nuC-OU-7ew"/>
-                            <constraint firstItem="H3l-Rv-eNR" firstAttribute="top" secondItem="C9r-a8-THb" secondAttribute="bottom" constant="40" id="pwl-Ew-Cd8"/>
+                            <constraint firstItem="H3l-Rv-eNR" firstAttribute="top" secondItem="C9r-a8-THb" secondAttribute="bottom" constant="100" id="pwl-Ew-Cd8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Yd-0y-aoA"/>
@@ -822,7 +822,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Z75-tb-iBc"/>
         <segue reference="x2S-uD-Zlj"/>
         <segue reference="R59-4M-1KD"/>
         <segue reference="4i3-Ue-gQt"/>
