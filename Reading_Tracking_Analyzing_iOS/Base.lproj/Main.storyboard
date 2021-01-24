@@ -566,39 +566,48 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" systemColor="darkTextColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q: According to the passage, which of the following is correct about walls in China?" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9r-a8-THb">
-                                <rect key="frame" x="20" y="130" width="374" height="89.666666666666686"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9r-a8-THb">
+                                <rect key="frame" x="20" y="130" width="374" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="H3l-Rv-eNR">
-                                <rect key="frame" x="20" y="434" width="374" height="36"/>
+                                <rect key="frame" x="20" y="200" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="A. People usually built walls around villages and towns, but never inside them.">
+                                <state key="normal" title="A">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickA:" destination="Gkw-4E-h5X" eventType="touchUpInside" id="VRg-uG-Eqk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BaQ-0m-g7i">
-                                <rect key="frame" x="20" y="550" width="374" height="36"/>
+                                <rect key="frame" x="20" y="276" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="B. Walls were an essential part of villages, towns, houses and even temples.">
+                                <state key="normal" title="B">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickB:" destination="Gkw-4E-h5X" eventType="touchUpInside" id="fA1-hS-SZB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gP7-qQ-IQj">
-                                <rect key="frame" x="20" y="666" width="374" height="36"/>
+                                <rect key="frame" x="20" y="352" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="C. Only critical villages and towns are walled.">
+                                <state key="normal" title="C">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickC:" destination="Gkw-4E-h5X" eventType="touchUpInside" id="Nbl-bE-ylA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZQ-oG-81Z">
-                                <rect key="frame" x="0.0" y="782" width="414" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <rect key="frame" x="0.0" y="788" width="414" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="Finish Answering">
                                     <color key="titleShadowColor" systemColor="systemTealColor"/>
                                 </state>
@@ -606,13 +615,36 @@
                                     <action selector="finishClicked:" destination="Gkw-4E-h5X" eventType="touchUpInside" id="5mb-2n-Pgo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oJ-xM-aoL">
+                                <rect key="frame" x="74" y="720" width="75" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" systemColor="systemTealColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickBack:" destination="Gkw-4E-h5X" eventType="touchUpInside" id="gap-In-Y1m"/>
+                                    <action selector="onClickBack:" destination="VGp-zU-r7I" eventType="touchUpInside" id="orp-rp-Fh8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzK-Fi-qHH">
+                                <rect key="frame" x="267" y="720" width="71" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" systemColor="systemTealColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickBack:" destination="VGp-zU-r7I" eventType="touchUpInside" id="6qp-C3-Yp0"/>
+                                    <action selector="onClickNext:" destination="Gkw-4E-h5X" eventType="touchUpInside" id="OR6-r7-1ag"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JtE-bb-Mqo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="H3l-Rv-eNR" firstAttribute="trailing" secondItem="JtE-bb-Mqo" secondAttribute="trailing" constant="-20" id="4wM-4z-hHJ"/>
-                            <constraint firstItem="RZQ-oG-81Z" firstAttribute="top" secondItem="gP7-qQ-IQj" secondAttribute="bottom" constant="80" id="8NQ-Ff-hm7"/>
-                            <constraint firstItem="gP7-qQ-IQj" firstAttribute="top" secondItem="BaQ-0m-g7i" secondAttribute="bottom" constant="80" id="CCZ-nE-ik6"/>
+                            <constraint firstItem="BaQ-0m-g7i" firstAttribute="top" secondItem="H3l-Rv-eNR" secondAttribute="bottom" constant="40" id="7bM-Ow-5Mr"/>
                             <constraint firstItem="RZQ-oG-81Z" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" id="ED1-D2-yps"/>
                             <constraint firstItem="JtE-bb-Mqo" firstAttribute="trailing" secondItem="RZQ-oG-81Z" secondAttribute="trailing" id="GCR-2c-Ugt"/>
                             <constraint firstItem="H3l-Rv-eNR" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" constant="20" id="HCC-AE-xGi"/>
@@ -620,18 +652,26 @@
                             <constraint firstItem="j0u-OG-IZV" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" id="QKB-sZ-dGx"/>
                             <constraint firstItem="gP7-qQ-IQj" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" constant="20" id="QT3-BA-2dp"/>
                             <constraint firstItem="BaQ-0m-g7i" firstAttribute="trailing" secondItem="JtE-bb-Mqo" secondAttribute="trailing" constant="-20" id="R4I-Xu-bi5"/>
+                            <constraint firstItem="gP7-qQ-IQj" firstAttribute="top" secondItem="BaQ-0m-g7i" secondAttribute="bottom" constant="40" id="WQF-1s-hRm"/>
                             <constraint firstItem="j0u-OG-IZV" firstAttribute="top" secondItem="JtE-bb-Mqo" secondAttribute="top" constant="20" id="Z0s-eI-hka"/>
                             <constraint firstItem="C9r-a8-THb" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" constant="20" id="bVB-Oh-aoU"/>
                             <constraint firstItem="JtE-bb-Mqo" firstAttribute="trailing" secondItem="j0u-OG-IZV" secondAttribute="trailing" id="bwb-SW-Bcc"/>
                             <constraint firstAttribute="trailing" secondItem="gP7-qQ-IQj" secondAttribute="trailing" constant="20" id="cDE-3n-JaR"/>
                             <constraint firstItem="C9r-a8-THb" firstAttribute="top" secondItem="j0u-OG-IZV" secondAttribute="bottom" constant="20" id="fVp-2v-h89"/>
                             <constraint firstItem="BaQ-0m-g7i" firstAttribute="leading" secondItem="JtE-bb-Mqo" secondAttribute="leading" constant="20" id="kdj-kv-f1g"/>
-                            <constraint firstItem="BaQ-0m-g7i" firstAttribute="top" secondItem="H3l-Rv-eNR" secondAttribute="bottom" constant="80" id="lhr-la-t0e"/>
                             <constraint firstItem="C9r-a8-THb" firstAttribute="trailing" secondItem="JtE-bb-Mqo" secondAttribute="trailing" constant="-20" id="nuC-OU-7ew"/>
+                            <constraint firstItem="H3l-Rv-eNR" firstAttribute="top" secondItem="C9r-a8-THb" secondAttribute="bottom" constant="40" id="pwl-Ew-Cd8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Yd-0y-aoA"/>
                     <connections>
+                        <outlet property="answerA" destination="H3l-Rv-eNR" id="ABo-Yn-qod"/>
+                        <outlet property="answerB" destination="BaQ-0m-g7i" id="0Yc-rk-Ioy"/>
+                        <outlet property="answerC" destination="gP7-qQ-IQj" id="JqA-uJ-AgU"/>
+                        <outlet property="backB" destination="8oJ-xM-aoL" id="CMJ-2b-u4s"/>
+                        <outlet property="finishB" destination="RZQ-oG-81Z" id="gv6-ca-UC6"/>
+                        <outlet property="nextB" destination="JzK-Fi-qHH" id="bCC-pL-WyX"/>
+                        <outlet property="questionL" destination="C9r-a8-THb" id="bwq-GD-0RV"/>
                         <segue destination="VGp-zU-r7I" kind="show" identifier="QuesToQuesPre" id="x2S-uD-Zlj"/>
                         <segue destination="mod-c1-7hr" kind="show" identifier="QuesToRead" id="R59-4M-1KD"/>
                         <segue destination="ciW-bc-gRP" kind="show" identifier="QuesToFinish" id="0gd-QQ-Xp5"/>
@@ -639,7 +679,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bN8-JH-j94" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3864" y="1440"/>
+            <point key="canvasLocation" x="3863.7681159420295" y="1439.7321428571429"/>
         </scene>
         <!--Thanks Page-->
         <scene sceneID="8xw-PT-uLh">
@@ -693,12 +733,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xy-2B-Wd5">
-                                <rect key="frame" x="0.0" y="782" width="414" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <rect key="frame" x="0.0" y="788" width="414" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleShadowColor" systemColor="systemTealColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="onClickConitnue:" destination="VGp-zU-r7I" eventType="touchUpInside" id="ZyR-W4-gD9"/>
                                     <segue destination="mod-c1-7hr" kind="show" id="h3H-5e-vgy"/>
                                 </connections>
                             </button>
@@ -714,48 +755,65 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q: According to the passage, which of the following is correct about walls in China?" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZU-Xi-yqQ">
-                                <rect key="frame" x="20" y="189" width="374" height="89.666666666666686"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZU-Xi-yqQ">
+                                <rect key="frame" x="20" y="189" width="374" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="eX6-aK-6P9">
-                                <rect key="frame" x="20" y="358.66666666666669" width="374" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lZ-Pf-00S">
+                                <rect key="frame" x="69" y="726" width="75" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" systemColor="systemTealColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickBack:" destination="VGp-zU-r7I" eventType="touchUpInside" id="dfb-lf-0rR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwu-Ji-UDS">
+                                <rect key="frame" x="273" y="726" width="71" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" systemColor="systemTealColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickNext:" destination="VGp-zU-r7I" eventType="touchUpInside" id="RLC-A0-HuU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W8y-m4-t2e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7YE-XL-eyx" firstAttribute="leading" secondItem="W8y-m4-t2e" secondAttribute="leading" id="7wq-dJ-h9Y"/>
-                            <constraint firstItem="W8y-m4-t2e" firstAttribute="trailing" secondItem="eX6-aK-6P9" secondAttribute="trailing" constant="20" id="HMp-aB-YFG"/>
                             <constraint firstItem="W8y-m4-t2e" firstAttribute="trailing" secondItem="7YE-XL-eyx" secondAttribute="trailing" id="NbW-OV-V1H"/>
                             <constraint firstItem="W8y-m4-t2e" firstAttribute="trailing" secondItem="3Xy-2B-Wd5" secondAttribute="trailing" id="SYw-oN-XHC"/>
                             <constraint firstItem="W8y-m4-t2e" firstAttribute="trailing" secondItem="rZU-Xi-yqQ" secondAttribute="trailing" constant="20" id="UpD-cT-tdn"/>
                             <constraint firstItem="W8y-m4-t2e" firstAttribute="bottom" secondItem="3Xy-2B-Wd5" secondAttribute="bottom" constant="20" id="YPj-gS-kkA"/>
                             <constraint firstItem="7YE-XL-eyx" firstAttribute="top" secondItem="W8y-m4-t2e" secondAttribute="top" constant="20" id="aqq-n7-GVV"/>
-                            <constraint firstItem="eX6-aK-6P9" firstAttribute="leading" secondItem="6Sb-KK-rVH" secondAttribute="leading" constant="20" id="eNl-Cq-q8i"/>
-                            <constraint firstItem="eX6-aK-6P9" firstAttribute="top" secondItem="rZU-Xi-yqQ" secondAttribute="bottom" constant="80" id="nxI-bJ-r4q"/>
                             <constraint firstItem="rZU-Xi-yqQ" firstAttribute="leading" secondItem="6Sb-KK-rVH" secondAttribute="leading" constant="20" id="rnP-4q-eLC"/>
                             <constraint firstItem="rZU-Xi-yqQ" firstAttribute="top" secondItem="7YE-XL-eyx" secondAttribute="bottom" constant="80" id="tKb-Tn-J0q"/>
                             <constraint firstItem="3Xy-2B-Wd5" firstAttribute="leading" secondItem="W8y-m4-t2e" secondAttribute="leading" id="tUq-Yo-8d4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nrG-lz-dUL"/>
+                    <connections>
+                        <outlet property="BackB" destination="7lZ-Pf-00S" id="bH4-bL-Ik2"/>
+                        <outlet property="ContinueB" destination="3Xy-2B-Wd5" id="5ZC-yg-8U3"/>
+                        <outlet property="NextB" destination="Jwu-Ji-UDS" id="fD3-xf-28m"/>
+                        <outlet property="QuestionL" destination="rZU-Xi-yqQ" id="RuV-ge-m1J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VH8-45-N8I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2009" y="1602"/>
+            <point key="canvasLocation" x="2008.6956521739132" y="1601.7857142857142"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="x2S-uD-Zlj"/>
-        <segue reference="h3H-5e-vgy"/>
+        <segue reference="R59-4M-1KD"/>
         <segue reference="4i3-Ue-gQt"/>
         <segue reference="wt4-up-P0U"/>
         <segue reference="0Ob-AR-reN"/>

@@ -10,9 +10,58 @@ import UIKit
 
 class QuestionPreviewViewController: UIViewController {
     
+    @IBOutlet var QuestionL: UILabel!
+    
+    @IBOutlet var ContinueB: UIButton!
+    @IBOutlet var BackB: UIButton!
+    @IBOutlet var NextB: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        BackB.isEnabled = false
+        ContinueB.isEnabled = false
+        
+        QuestionL.text = QUESTIONS[ARTICLE_ID][QUESTION_ID]
+    }
+    
+    @IBAction func onClickNext(_ sender: UIButton) {
+        if (QUESTION_ID < QUESTION_NUM - 1) {
+            QUESTION_ID = QUESTION_ID + 1
+            
+            QuestionL.text = QUESTIONS[ARTICLE_ID][QUESTION_ID]
+            
+            if (QUESTION_ID > 0) {
+                BackB.isEnabled = true
+            }
+            
+            if (QUESTION_ID == QUESTION_NUM - 1) {
+                NextB.isEnabled = false
+                ContinueB.isEnabled = true
+            }
+        }
+    }
+    
+    @IBAction func onClickBack(_ sender: UIButton) {
+        if (QUESTION_ID > 0) {
+            QUESTION_ID = QUESTION_ID - 1
+            
+            QuestionL.text = QUESTIONS[ARTICLE_ID][QUESTION_ID]
+            
+            if (QUESTION_ID == 0) {
+                BackB.isEnabled = false
+            }
+            
+            if (QUESTION_ID < QUESTION_NUM - 1) {
+                NextB.isEnabled = true
+                ContinueB.isEnabled = false
+            }
+        }
+    }
+    
+    @IBAction func onClickConitnue(_ sender: UIButton) {
+        QUESTION_ID = 0
     }
 }
 
