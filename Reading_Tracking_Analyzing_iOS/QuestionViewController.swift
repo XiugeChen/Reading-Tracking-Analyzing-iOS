@@ -10,6 +10,8 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
+    var fileURL: URL?
+    
     @IBOutlet var questionL: UILabel!
     
     @IBOutlet var answerA: UIButton!
@@ -40,6 +42,29 @@ class QuestionViewController: UIViewController {
         answerA.backgroundColor = UIColor.white
         answerB.backgroundColor = UIColor.white
         answerC.backgroundColor = UIColor.white
+        
+        let currentTime = Int64(Date().timeIntervalSince1970 * 1000);
+        let file = String(format: "ques_answer_%ld.txt", currentTime)
+        
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+
+            self.fileURL = dir.appendingPathComponent(file)
+            
+            print("Init question answering file url to be:", self.fileURL!)
+            
+            let text = String(format: "#Question_answering\n#Participant_num,%d\n#Article_num,%d\n", TEST_ID, articleId)
+            
+            do {
+                try text.write(to: fileURL!, atomically: true, encoding: .utf8)
+            }
+            catch {
+                print("[Error]: Write to file failed, file:", self.fileURL!)
+            }
+        }
+        
+        let start_text = String(format: "#Start_question_answering,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
+        
+        record_data(text: start_text)
     }
     
     @IBAction func onClickA(_ sender: UIButton) {
@@ -55,6 +80,10 @@ class QuestionViewController: UIViewController {
         else {
             finishB.isEnabled = true
         }
+        
+        let choic_a_text = String(format: "#Select_A,%d,%ld\n", QUESTION_ID, Int64(Date().timeIntervalSince1970 * 1000))
+        
+        record_data(text: choic_a_text)
     }
     
     @IBAction func onClickB(_ sender: UIButton) {
@@ -70,6 +99,10 @@ class QuestionViewController: UIViewController {
         else {
             finishB.isEnabled = true
         }
+        
+        let choic_b_text = String(format: "#Select_B,%d,%ld\n", QUESTION_ID, Int64(Date().timeIntervalSince1970 * 1000))
+        
+        record_data(text: choic_b_text)
     }
     
     @IBAction func onClickC(_ sender: UIButton) {
@@ -85,6 +118,10 @@ class QuestionViewController: UIViewController {
         else {
             finishB.isEnabled = true
         }
+        
+        let choic_c_text = String(format: "#Select_C,%d,%ld\n", QUESTION_ID, Int64(Date().timeIntervalSince1970 * 1000))
+        
+        record_data(text: choic_c_text)
     }
     
     @IBAction func onClickBack(_ sender: UIButton) {
@@ -127,6 +164,10 @@ class QuestionViewController: UIViewController {
                 nextB.isEnabled = true
                 finishB.isEnabled = false
             }
+            
+            let back_text = String(format: "#Back_clicked,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
+            
+            record_data(text: back_text)
         }
     }
     
@@ -184,7 +225,9 @@ class QuestionViewController: UIViewController {
                 backB.isEnabled = true
             }
             
-
+            let next_text = String(format: "#Next_clicked,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
+            
+            record_data(text: next_text)
         }
     }
     
@@ -201,8 +244,13 @@ class QuestionViewController: UIViewController {
             ANSWERS[i] = ""
         }
         
-        // TODO: record this
-        print(answer_text)
+        answer_text += "\n"
+        
+        record_data(text: answer_text)
+        
+        let end_text = String(format: "#End_question_answering,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
+        
+        record_data(text: end_text)
         
         if (ARTICLE_SEQ < ARTICLE_NUM) {
             switch (READING_MODE[TEST_ID][ARTICLE_SEQ]) {
@@ -216,6 +264,15 @@ class QuestionViewController: UIViewController {
         }
         else {
             performSegue(withIdentifier: "QuesToFinish", sender: self)
+        }
+    }
+    
+    // MARK: - Helper functions related to data recording
+    func record_data(text: String) {
+        if let fileUpdater = try? FileHandle(forUpdating: self.fileURL!) {
+            fileUpdater.seekToEndOfFile()
+            fileUpdater.write(text.data(using: .utf8)!)
+            fileUpdater.closeFile()
         }
     }
 }

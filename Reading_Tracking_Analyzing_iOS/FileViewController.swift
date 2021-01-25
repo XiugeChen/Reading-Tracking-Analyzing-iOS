@@ -145,9 +145,9 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
 
             self.fileURL = dir.appendingPathComponent(file)
             
-            print("Init file url to be:", self.fileURL!)
+            print("Init reading file url to be:", self.fileURL!)
             
-            let text = "#Data-Collection\n#Format:\n#Scroll,time,x,y\n#Zoom,time,percentage\n#GazePoint,time,x,y\n"
+            let text = String(format: "#Article_reading\n#Participant_num,%d\n#Article_num,%d\n#Data-Collection\n#Format:\n#Scroll,time,x,y\n#Zoom,time,percentage\n#GazePoint,time,x,y\n", TEST_ID, articleId)
             
             do {
                 try text.write(to: fileURL!, atomically: true, encoding: .utf8)

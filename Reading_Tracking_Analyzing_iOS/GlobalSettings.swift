@@ -10,6 +10,7 @@ import Foundation
 
 let QUESTION_NUM = 20
 let ARTICLE_NUM = 4
+let TEST_NUM = 24
 
 enum DisplayMethod {
     case social
@@ -38,15 +39,57 @@ let QUESTIONS = [PAS1_QUESTION, PAS2_QUESTION, PAS3_QUESTION, PAS4_QUESTION]
 
 let CHOICES = [PAS1_CHOICE, PAS2_CHOICE, PAS3_CHOICE, PAS4_CHOICE]
 
-let DISPLAY = [[DisplayMethod.social, DisplayMethod.news, DisplayMethod.social, DisplayMethod.news],
+let DISPLAY = [[DisplayMethod.social, DisplayMethod.social, DisplayMethod.news,         DisplayMethod.news],
+               [DisplayMethod.social, DisplayMethod.social, DisplayMethod.news, DisplayMethod.news],
+               [DisplayMethod.news, DisplayMethod.social, DisplayMethod.social, DisplayMethod.news],
                [DisplayMethod.social, DisplayMethod.news, DisplayMethod.social, DisplayMethod.news],
+               [DisplayMethod.social, DisplayMethod.news, DisplayMethod.social, DisplayMethod.news],
+               [DisplayMethod.news, DisplayMethod.social, DisplayMethod.social, DisplayMethod.news],
                [DisplayMethod.news, DisplayMethod.social, DisplayMethod.news, DisplayMethod.social],
-               [DisplayMethod.news, DisplayMethod.social, DisplayMethod.news, DisplayMethod.social]]
+               [DisplayMethod.social, DisplayMethod.news, DisplayMethod.news, DisplayMethod.social],
+               [DisplayMethod.news, DisplayMethod.news, DisplayMethod.social, DisplayMethod.social],
+               [DisplayMethod.news, DisplayMethod.news, DisplayMethod.social, DisplayMethod.social],
+               [DisplayMethod.social, DisplayMethod.news, DisplayMethod.news, DisplayMethod.social],
+               [DisplayMethod.news, DisplayMethod.social, DisplayMethod.news, DisplayMethod.social],
+               [DisplayMethod.news, DisplayMethod.social, DisplayMethod.news, DisplayMethod.social],
+               [DisplayMethod.social, DisplayMethod.news, DisplayMethod.news, DisplayMethod.social],
+               [DisplayMethod.news, DisplayMethod.news, DisplayMethod.social, DisplayMethod.social],
+               [DisplayMethod.news, DisplayMethod.news, DisplayMethod.social, DisplayMethod.social],
+               [DisplayMethod.social, DisplayMethod.news, DisplayMethod.news, DisplayMethod.social],
+               [DisplayMethod.news, DisplayMethod.social, DisplayMethod.news, DisplayMethod.social],
+               [DisplayMethod.social, DisplayMethod.social, DisplayMethod.news, DisplayMethod.news],
+               [DisplayMethod.social, DisplayMethod.social, DisplayMethod.news, DisplayMethod.news],
+               [DisplayMethod.news, DisplayMethod.social, DisplayMethod.social, DisplayMethod.news],
+               [DisplayMethod.social, DisplayMethod.news, DisplayMethod.social, DisplayMethod.news],
+               [DisplayMethod.social, DisplayMethod.news, DisplayMethod.social, DisplayMethod.news],
+               [DisplayMethod.news, DisplayMethod.social, DisplayMethod.social, DisplayMethod.news]
+              ]
 
 let READING_MODE = [[ReadingMode.deep, ReadingMode.shallow, ReadingMode.deep, ReadingMode.shallow],
-                    [ReadingMode.shallow, ReadingMode.deep, ReadingMode.shallow, ReadingMode.deep],
+                    [ReadingMode.shallow, ReadingMode.deep, ReadingMode.deep, ReadingMode.shallow],
+                    [ReadingMode.deep, ReadingMode.deep, ReadingMode.shallow, ReadingMode.shallow],
+                    [ReadingMode.deep, ReadingMode.deep, ReadingMode.shallow, ReadingMode.shallow],
+                    [ReadingMode.shallow, ReadingMode.deep, ReadingMode.deep, ReadingMode.shallow],
                     [ReadingMode.deep, ReadingMode.shallow, ReadingMode.deep, ReadingMode.shallow],
-                    [ReadingMode.shallow, ReadingMode.deep, ReadingMode.shallow, ReadingMode.deep]]
+                    [ReadingMode.deep, ReadingMode.shallow, ReadingMode.shallow, ReadingMode.deep],
+                    [ReadingMode.shallow, ReadingMode.deep, ReadingMode.shallow, ReadingMode.deep],
+                    [ReadingMode.shallow, ReadingMode.deep, ReadingMode.shallow, ReadingMode.deep],
+                    [ReadingMode.deep, ReadingMode.shallow, ReadingMode.shallow, ReadingMode.deep],
+                    [ReadingMode.shallow, ReadingMode.shallow, ReadingMode.deep, ReadingMode.deep],
+                    [ReadingMode.shallow, ReadingMode.shallow, ReadingMode.deep, ReadingMode.deep],
+                    [ReadingMode.shallow, ReadingMode.deep, ReadingMode.deep, ReadingMode.shallow],
+                    [ReadingMode.deep, ReadingMode.shallow, ReadingMode.deep, ReadingMode.shallow],
+                    [ReadingMode.deep, ReadingMode.shallow, ReadingMode.deep, ReadingMode.shallow],
+                    [ReadingMode.shallow, ReadingMode.deep, ReadingMode.deep, ReadingMode.shallow],
+                    [ReadingMode.deep, ReadingMode.deep, ReadingMode.shallow, ReadingMode.shallow],
+                    [ReadingMode.deep, ReadingMode.deep, ReadingMode.shallow, ReadingMode.shallow],
+                    [ReadingMode.shallow, ReadingMode.deep, ReadingMode.shallow, ReadingMode.deep],
+                    [ReadingMode.deep, ReadingMode.shallow, ReadingMode.shallow, ReadingMode.deep],
+                    [ReadingMode.shallow, ReadingMode.shallow, ReadingMode.deep, ReadingMode.deep],
+                    [ReadingMode.shallow, ReadingMode.shallow, ReadingMode.deep, ReadingMode.deep],
+                    [ReadingMode.deep, ReadingMode.shallow, ReadingMode.shallow, ReadingMode.deep],
+                    [ReadingMode.shallow, ReadingMode.deep, ReadingMode.shallow, ReadingMode.deep]
+                   ]
 
 var TEST_ID = 0
 var ARTICLE_SEQ = 0

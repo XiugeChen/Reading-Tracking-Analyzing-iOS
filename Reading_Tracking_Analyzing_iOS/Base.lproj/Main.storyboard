@@ -115,77 +115,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HwS-dE-VMp" userLabel="ButtonStackView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1e-Zt-TZv">
-                                        <rect key="frame" x="158" y="0.0" width="98" height="163.66666666666666"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="Test 1">
-                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="test1Clicked:" destination="Fml-wl-0sv" eventType="touchUpInside" id="x2q-mg-feR"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JK0-AD-ZnL">
-                                        <rect key="frame" x="155.66666666666666" y="171.66666666666669" width="102.99999999999997" height="163.66666666666669"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="Test 2">
-                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="test2Clicked:" destination="Fml-wl-0sv" eventType="touchUpInside" id="SO1-Rz-cdC"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hT1-RV-3pg">
-                                        <rect key="frame" x="155" y="343.33333333333331" width="104" height="163.33333333333331"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="Test 3">
-                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="test3Clicked:" destination="Fml-wl-0sv" eventType="touchUpInside" id="fsF-dF-21d"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pX-Sr-HMv">
-                                        <rect key="frame" x="155" y="514.66666666666663" width="104" height="163.66666666666663"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="Test 4">
-                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="test4Clicked:" destination="Fml-wl-0sv" eventType="touchUpInside" id="uQs-09-rNH"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upy-it-ypf">
-                                        <rect key="frame" x="164" y="686.33333333333337" width="86" height="131.66666666666663"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <state key="normal" title="Back">
-                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="tIe-fK-2z2"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upy-it-ypf">
+                                <rect key="frame" x="0.0" y="782" width="414" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" systemColor="systemTealColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickBack:" destination="Fml-wl-0sv" eventType="touchUpInside" id="nay-qT-4i4"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="tIe-fK-2z2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfq-BK-40g">
+                                <rect key="frame" x="0.0" y="702" width="414" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" systemColor="systemTealColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickNext:" destination="Fml-wl-0sv" eventType="touchUpInside" id="Qto-f4-q9W"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your participant num:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgZ-xc-FHK">
+                                <rect key="frame" x="0.0" y="64" width="414" height="95.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Your input" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o2d-Ai-HYx">
+                                <rect key="frame" x="0.0" y="239.66666666666666" width="414" height="45.666666666666657"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-xi-woE">
+                                <rect key="frame" x="0.0" y="365.33333333333331" width="414" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HLQ-ml-3QB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HLQ-ml-3QB" firstAttribute="trailing" secondItem="HwS-dE-VMp" secondAttribute="trailing" id="35G-SC-E2N"/>
-                            <constraint firstItem="HwS-dE-VMp" firstAttribute="top" secondItem="HLQ-ml-3QB" secondAttribute="top" id="CDR-rV-K0I"/>
-                            <constraint firstItem="HLQ-ml-3QB" firstAttribute="bottom" secondItem="HwS-dE-VMp" secondAttribute="bottom" id="HHa-vh-HFt"/>
-                            <constraint firstItem="HwS-dE-VMp" firstAttribute="leading" secondItem="HLQ-ml-3QB" secondAttribute="leading" id="v2h-tz-wpg"/>
+                            <constraint firstItem="ew9-xi-woE" firstAttribute="leading" secondItem="zPp-DQ-1fP" secondAttribute="leading" id="3dR-Ob-4h2"/>
+                            <constraint firstAttribute="trailing" secondItem="WgZ-xc-FHK" secondAttribute="trailing" id="5xT-6B-FNq"/>
+                            <constraint firstItem="Upy-it-ypf" firstAttribute="leading" secondItem="HLQ-ml-3QB" secondAttribute="leading" id="6gP-tY-cyi"/>
+                            <constraint firstItem="HLQ-ml-3QB" firstAttribute="trailing" secondItem="Upy-it-ypf" secondAttribute="trailing" id="7vZ-xW-7Gc"/>
+                            <constraint firstItem="o2d-Ai-HYx" firstAttribute="leading" secondItem="HLQ-ml-3QB" secondAttribute="leading" id="EJZ-4X-q9E"/>
+                            <constraint firstItem="Gfq-BK-40g" firstAttribute="leading" secondItem="HLQ-ml-3QB" secondAttribute="leading" id="JnV-eC-waA"/>
+                            <constraint firstItem="WgZ-xc-FHK" firstAttribute="leading" secondItem="HLQ-ml-3QB" secondAttribute="leading" id="Lvd-MV-VCQ"/>
+                            <constraint firstItem="o2d-Ai-HYx" firstAttribute="top" secondItem="WgZ-xc-FHK" secondAttribute="bottom" constant="80" id="MYn-is-xKT"/>
+                            <constraint firstItem="Gfq-BK-40g" firstAttribute="trailing" secondItem="HLQ-ml-3QB" secondAttribute="trailing" id="UPO-BM-Bab"/>
+                            <constraint firstItem="Upy-it-ypf" firstAttribute="top" secondItem="Gfq-BK-40g" secondAttribute="bottom" constant="20" id="aZ3-zd-bDP"/>
+                            <constraint firstItem="HLQ-ml-3QB" firstAttribute="bottom" secondItem="Upy-it-ypf" secondAttribute="bottom" constant="20" id="c7s-5F-q2O"/>
+                            <constraint firstAttribute="trailing" secondItem="ew9-xi-woE" secondAttribute="trailing" id="fbF-wf-Ly9"/>
+                            <constraint firstItem="ew9-xi-woE" firstAttribute="top" secondItem="o2d-Ai-HYx" secondAttribute="bottom" constant="80" id="p2r-h3-Y82"/>
+                            <constraint firstItem="HLQ-ml-3QB" firstAttribute="trailing" secondItem="o2d-Ai-HYx" secondAttribute="trailing" id="ptp-Bb-ctx"/>
+                            <constraint firstItem="WgZ-xc-FHK" firstAttribute="top" secondItem="HLQ-ml-3QB" secondAttribute="top" constant="20" id="qSf-RI-CUN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RWM-yX-SoI"/>
                     <connections>
+                        <outlet property="backB" destination="Upy-it-ypf" id="2id-yS-55c"/>
+                        <outlet property="inputT" destination="o2d-Ai-HYx" id="AwR-dD-2eC"/>
+                        <outlet property="nextB" destination="Gfq-BK-40g" id="10A-39-LV2"/>
+                        <outlet property="warnL" destination="ew9-xi-woE" id="5Fe-kX-Afg"/>
                         <segue destination="mod-c1-7hr" kind="show" identifier="ListToRead" id="eCx-WW-GIn"/>
                         <segue destination="VGp-zU-r7I" kind="show" identifier="ListToQuesPre" id="TGF-Ep-sAZ"/>
                     </connections>
@@ -822,11 +817,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="x2S-uD-Zlj"/>
-        <segue reference="R59-4M-1KD"/>
+        <segue reference="TGF-Ep-sAZ"/>
+        <segue reference="eCx-WW-GIn"/>
         <segue reference="4i3-Ue-gQt"/>
         <segue reference="wt4-up-P0U"/>
-        <segue reference="0Ob-AR-reN"/>
+        <segue reference="tIe-fK-2z2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="darkTextColor">
@@ -834,6 +829,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
