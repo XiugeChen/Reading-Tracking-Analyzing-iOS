@@ -23,10 +23,10 @@ enum ReadingMode {
 }
 
 let URLS_SOCIAL =
-    ["https://pasteboard.co/JL4O32z.jpg",
-     "https://pasteboard.co/JL4FoYt.jpg",
-     "https://pasteboard.co/JL4Lbv2.jpg",
-     "https://pasteboard.co/JL4SnLC.jpg"]
+    ["http://45.113.232.76:8080/the_shed.html", // "https://pasteboard.co/JL4O32z.jpg",
+     "http://45.113.232.76:8080/the_camels_back.html", // "https://pasteboard.co/JL4FoYt.jpg",
+     "http://45.113.232.76:8080/hedgehog_experience.html", // "https://pasteboard.co/JL4Lbv2.jpg",
+     "http://45.113.232.76:8080/a_not_so_bad_bully.html"] // "https://pasteboard.co/JL4SnLC.jpg"]
 
 let URLS_NEWS = ["https://cxgsimon.medium.com/the-shed-3865fd8b381a",
      "https://cxgsimon.medium.com/the-camels-back-b4c7aa12010d",

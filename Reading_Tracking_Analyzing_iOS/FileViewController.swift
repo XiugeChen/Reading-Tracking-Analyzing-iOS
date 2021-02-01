@@ -349,13 +349,15 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
             countdown -= 1
         }
         else {
-            stopRecording()
+            if (self.isRecording) {
+                stopRecording()
             
-            let end_text = String(format: "#End_reading,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
-            
-            record_data(text: end_text)
-            
-            performSegue(withIdentifier: "ReadingToQuestionPage", sender: self)
+                let end_text = String(format: "#End_reading,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
+                
+                record_data(text: end_text)
+                
+                performSegue(withIdentifier: "ReadingToQuestionPage", sender: self)
+            }
         }
     }
 }

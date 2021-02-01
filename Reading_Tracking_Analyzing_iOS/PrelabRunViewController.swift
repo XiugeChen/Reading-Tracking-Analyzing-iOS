@@ -206,7 +206,9 @@ class PrelabRunViewController: UIViewController, ARSCNViewDelegate, ARSessionDel
     }
     
     @IBAction func onClickContinue(_ sender: UIButton) {
-        stopRecording()
+        if (self.isRecording) {
+            stopRecording()
+        }
         
         let end_text = String(format: "#Cali_end,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
         
