@@ -12,7 +12,7 @@ import ARKit
 import WebKit
 import AVFoundation
 
-class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UIScrollViewDelegate, AVCaptureFileOutputRecordingDelegate, AVCaptureDepthDataOutputDelegate {
+class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UIScrollViewDelegate, AVCaptureFileOutputRecordingDelegate, AVCaptureDepthDataOutputDelegate, AVAudioPlayerDelegate {
     
     func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
     }
@@ -20,7 +20,6 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
     var fileURL: URL?
     
     // countdown timer
-    @IBOutlet var countdownL: UILabel!
     var countdown = 255
     
     @IBOutlet var sceneView: ARSCNView!
@@ -33,6 +32,14 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
     let movieOutput = AVCaptureMovieFileOutput()
     
     var isRecording = false
+    
+    // MARK: - Variables related to audio playing
+    var tenSecPlayer: AVAudioPlayer?
+    var thirtySecPlayer: AVAudioPlayer?
+    var oneMinPlayer: AVAudioPlayer?
+    var twoMinPlayer: AVAudioPlayer?
+    var threeMinPlayer: AVAudioPlayer?
+    var fourMinPlayer: AVAudioPlayer?
     
     // MARK: - Variables related to Arkit and truthDepth camera
     var faceNode: SCNNode = SCNNode()
@@ -90,6 +97,7 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
     // MARK: - View Callback functions
     
     override func viewDidLoad() {
+        print("[INFO] Call: viewDidLoad")
         super.viewDidLoad()
         
         // Get screen size
@@ -160,9 +168,13 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
         let start_text = String(format: "#Start_reading,%ld\n", Int64(Date().timeIntervalSince1970 * 1000))
         
         record_data(text: start_text)
+        
+        // Set up audio player
+        setupAudio()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print("[INFO] Call: viewWillAppear")
         super.viewWillAppear(animated)
         
         // Create a session configuration
@@ -195,12 +207,15 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
                 }
                 
             } catch {
-                print("Error")
+                print("[Error] Camera recording session init fail")
             }
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        print("[INFO] Call: viewDidAppear")
+        super.viewDidAppear(animated)
+        
         self.startRecording()
     }
     
@@ -259,6 +274,39 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
         record_data(text: rec_end_text)
         
         print("[INFO] Recording ended")
+    }
+    
+    // MARK: - Helper functions to set up the audio player
+    func setupAudio() {
+        let tenSecPath = Bundle.main.path(forResource: "TenSec", ofType:"m4a")!
+        let tenSecUrl = URL(fileURLWithPath: tenSecPath)
+        
+        let thirtySecPath = Bundle.main.path(forResource: "ThirtySec", ofType:"m4a")!
+        let thirtySecUrl = URL(fileURLWithPath: thirtySecPath)
+        
+        let oneMinPath = Bundle.main.path(forResource: "OneMin", ofType:"m4a")!
+        let oneMinUrl = URL(fileURLWithPath: oneMinPath)
+        
+        let twoMinPath = Bundle.main.path(forResource: "TwoMin", ofType:"m4a")!
+        let twoMinUrl = URL(fileURLWithPath: twoMinPath)
+        
+        let threeMinPath = Bundle.main.path(forResource: "ThreeMin", ofType:"m4a")!
+        let threeMinUrl = URL(fileURLWithPath: threeMinPath)
+        
+        let fourMinPath = Bundle.main.path(forResource: "FourMin", ofType:"m4a")!
+        let fourMinUrl = URL(fileURLWithPath: fourMinPath)
+
+        do {
+            tenSecPlayer = try AVAudioPlayer(contentsOf: tenSecUrl)
+            thirtySecPlayer = try AVAudioPlayer(contentsOf: thirtySecUrl)
+            oneMinPlayer = try AVAudioPlayer(contentsOf: oneMinUrl)
+            twoMinPlayer = try AVAudioPlayer(contentsOf: twoMinUrl)
+            threeMinPlayer = try AVAudioPlayer(contentsOf: threeMinUrl)
+            fourMinPlayer = try AVAudioPlayer(contentsOf: fourMinUrl)
+            
+        } catch {
+            print("[ERROR] Audio player init failed")
+        }
     }
     
     // MARK: - Helper functions related to gaze tracking
@@ -345,8 +393,36 @@ class FileViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate
     @objc func updateCounter() {
         //example functionality
         if countdown >= 0 {
-            countdownL.text = String(format: "Time Remaining: %d min %d sec", countdown / 60, countdown % 60)
             countdown -= 1
+            
+            switch (countdown) {
+            case 241:
+                print("[INFO] Play 4 min audio")
+                fourMinPlayer?.play()
+                break
+            case 181:
+                print("[INFO] Play 3 min audio")
+                threeMinPlayer?.play()
+                break
+            case 121:
+                print("[INFO] Play 2 min audio")
+                twoMinPlayer?.play()
+                break
+            case 61:
+                print("[INFO] Play 1 min audio")
+                oneMinPlayer?.play()
+                break
+            case 31:
+                print("[INFO] Play 30 sec audio")
+                thirtySecPlayer?.play()
+                break
+            case 11:
+                print("[INFO] Play 1 min audio")
+                tenSecPlayer?.play()
+                break
+            default:
+                break
+            }
         }
         else {
             if (self.isRecording) {

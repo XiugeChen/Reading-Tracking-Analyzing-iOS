@@ -23,6 +23,12 @@
 		EDAC6EF82466333300AF2BED /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAC6EF72466333300AF2BED /* QuestionViewController.swift */; };
 		EDAC6EFD2466A02700AF2BED /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDAC6EFC2466A02700AF2BED /* WebKit.framework */; };
 		EDF2A42724165E0F00FBD571 /* PrelabRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2A42624165E0F00FBD571 /* PrelabRunViewController.swift */; };
+		EDFCFA5425C7CBB5006FC60B /* TwoMin.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EDFCFA4E25C7CBB4006FC60B /* TwoMin.m4a */; };
+		EDFCFA5525C7CBB5006FC60B /* OneMin.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EDFCFA4F25C7CBB4006FC60B /* OneMin.m4a */; };
+		EDFCFA5625C7CBB5006FC60B /* ThirtySec.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EDFCFA5025C7CBB5006FC60B /* ThirtySec.m4a */; };
+		EDFCFA5725C7CBB5006FC60B /* ThreeMin.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EDFCFA5125C7CBB5006FC60B /* ThreeMin.m4a */; };
+		EDFCFA5825C7CBB5006FC60B /* TenSec.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EDFCFA5225C7CBB5006FC60B /* TenSec.m4a */; };
+		EDFCFA5925C7CBB5006FC60B /* FourMin.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EDFCFA5325C7CBB5006FC60B /* FourMin.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +50,12 @@
 		EDAC6EF72466333300AF2BED /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		EDAC6EFC2466A02700AF2BED /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		EDF2A42624165E0F00FBD571 /* PrelabRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrelabRunViewController.swift; sourceTree = "<group>"; };
+		EDFCFA4E25C7CBB4006FC60B /* TwoMin.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = TwoMin.m4a; path = ../../../../../../Downloads/TwoMin.m4a; sourceTree = "<group>"; };
+		EDFCFA4F25C7CBB4006FC60B /* OneMin.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = OneMin.m4a; path = ../../../../../../Downloads/OneMin.m4a; sourceTree = "<group>"; };
+		EDFCFA5025C7CBB5006FC60B /* ThirtySec.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThirtySec.m4a; path = ../../../../../../Downloads/ThirtySec.m4a; sourceTree = "<group>"; };
+		EDFCFA5125C7CBB5006FC60B /* ThreeMin.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThreeMin.m4a; path = ../../../../../../Downloads/ThreeMin.m4a; sourceTree = "<group>"; };
+		EDFCFA5225C7CBB5006FC60B /* TenSec.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = TenSec.m4a; path = ../../../../../../Downloads/TenSec.m4a; sourceTree = "<group>"; };
+		EDFCFA5325C7CBB5006FC60B /* FourMin.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = FourMin.m4a; path = ../../../../../../Downloads/FourMin.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,7 @@
 		ED336281241200190037331E /* Reading_Tracking_Analyzing_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				EDFCFA4A25C7C37F006FC60B /* Sounds */,
 				EDAC6EF3246531B600AF2BED /* GlobalSettings.swift */,
 				ED336282241200190037331E /* AppDelegate.swift */,
 				ED336284241200190037331E /* SceneDelegate.swift */,
@@ -104,6 +117,19 @@
 				EDAC6EFC2466A02700AF2BED /* WebKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDFCFA4A25C7C37F006FC60B /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				EDFCFA5325C7CBB5006FC60B /* FourMin.m4a */,
+				EDFCFA4F25C7CBB4006FC60B /* OneMin.m4a */,
+				EDFCFA5225C7CBB5006FC60B /* TenSec.m4a */,
+				EDFCFA5025C7CBB5006FC60B /* ThirtySec.m4a */,
+				EDFCFA5125C7CBB5006FC60B /* ThreeMin.m4a */,
+				EDFCFA4E25C7CBB4006FC60B /* TwoMin.m4a */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,9 +190,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDFCFA5725C7CBB5006FC60B /* ThreeMin.m4a in Resources */,
+				EDFCFA5525C7CBB5006FC60B /* OneMin.m4a in Resources */,
 				ED33628F2412001F0037331E /* LaunchScreen.storyboard in Resources */,
+				EDFCFA5625C7CBB5006FC60B /* ThirtySec.m4a in Resources */,
+				EDFCFA5425C7CBB5006FC60B /* TwoMin.m4a in Resources */,
 				ED33628C2412001F0037331E /* Assets.xcassets in Resources */,
+				EDFCFA5825C7CBB5006FC60B /* TenSec.m4a in Resources */,
 				ED33628A241200190037331E /* Main.storyboard in Resources */,
+				EDFCFA5925C7CBB5006FC60B /* FourMin.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
